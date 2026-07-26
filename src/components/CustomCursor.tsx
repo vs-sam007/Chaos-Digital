@@ -6,15 +6,14 @@ import { motion, useMotionValue, useSpring } from "framer-motion";
 export default function CustomCursor() {
   const [isHovered, setIsHovered] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
+  
   const cursorX = useMotionValue(-100);
   const cursorY = useMotionValue(-100);
 
-  const springConfig = { damping: 20, stiffness: 300, mass: 0.5 };
+  // Extremely smooth and snappy spring for the minimal dot
+  const springConfig = { damping: 25, stiffness: 600, mass: 0.3 };
   const smoothX = useSpring(cursorX, springConfig);
   const smoothY = useSpring(cursorY, springConfig);
-
-  const trailX = useSpring(cursorX, { damping: 15, stiffness: 150, mass: 1 });
-  const trailY = useSpring(cursorY, { damping: 15, stiffness: 150, mass: 1 });
 
   useEffect(() => {
     const updateMousePosition = (e: MouseEvent) => {
@@ -28,7 +27,9 @@ export default function CustomCursor() {
         target.tagName.toLowerCase() === "a" ||
         target.tagName.toLowerCase() === "button" ||
         target.closest("a") ||
-        target.closest("button")
+        target.closest("button") ||
+        target.classList.contains("cursor-pointer") ||
+        target.closest(".cursor-pointer")
       ) {
         setIsHovered(true);
       } else {
@@ -58,40 +59,37 @@ export default function CustomCursor() {
 
   return (
     <>
-      {/* Outer funky trail */}
+      {/* The minimal, solid dot cursor */}
       <motion.div
-        className="fixed top-0 left-0 w-16 h-16 rounded-[40%] bg-gradient-to-tr from-lime via-cyan-400 to-purple-500 pointer-events-none z-[9998] mix-blend-screen blur-[8px] opacity-70"
-        style={{
-          x: trailX,
-          y: trailY,
-          translateX: "-50%",
-          translateY: "-50%",
-        }}
-        animate={{
-          rotate: [0, 180, 360],
-          scale: isHovered ? 2 : isClicking ? 0.5 : 1,
-          borderRadius: isHovered ? ["40%", "50%", "40%"] : ["40%", "30%", "40%"],
-        }}
-        transition={{
-          rotate: { duration: 4, repeat: Infinity, ease: "linear" },
-          borderRadius: { duration: 2, repeat: Infinity, ease: "easeInOut" },
-          scale: { type: "spring", stiffness: 300, damping: 20 },
-        }}
-      />
-      
-      {/* Inner sharp dot */}
-      <motion.div
-        className="fixed top-0 left-0 w-4 h-4 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference"
+        className="fixed top-0 left-0 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference flex items-center justify-center overflow-hidden"
         style={{
           x: smoothX,
           y: smoothY,
           translateX: "-50%",
           translateY: "-50%",
+          width: 16,
+          height: 16,
         }}
         animate={{
-          scale: isHovered ? 0 : isClicking ? 1.5 : 1,
+          scale: isHovered ? 4 : isClicking ? 0.7 : 1,
         }}
-      />
+        transition={{
+          scale: { type: "spring", stiffness: 400, damping: 25 },
+        }}
+      >
+        {/* Subtle text inside the dot that only appears on hover */}
+        <motion.span
+          className="text-black font-playfair font-bold text-[4px] tracking-widest uppercase absolute"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{
+            opacity: isHovered ? 1 : 0,
+            scale: isHovered ? 1 : 0.5,
+          }}
+          transition={{ duration: 0.2 }}
+        >
+          View
+        </motion.span>
+      </motion.div>
     </>
   );
 }

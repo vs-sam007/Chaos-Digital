@@ -23,26 +23,26 @@ export default function About() {
             viewport={{ once: true, margin: "-100px" }}
             className="flex flex-col gap-6"
           >
-            <h2 className="text-4xl md:text-5xl lg:text-7xl font-outfit font-black tracking-tighter text-offwhite leading-[1.1]">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-playfair font-medium tracking-tighter text-offwhite leading-[1.1]">
               ARCHITECTS OF <br />
-              <span className="text-lime">CHAOS.</span>
+              <span className="italic text-white/40 capitalize">Excellence</span>
             </h2>
-            <p className="text-xl md:text-2xl text-offwhite/70 font-light max-w-lg">
+            <p className="text-xl md:text-2xl text-offwhite/70 font-light max-w-lg font-inter">
               We are a collective of engineers, designers, and strategists operating at the intersection of technology and art. We exist to build digital experiences that refuse to be ignored.
             </p>
             <div className="flex gap-4 mt-4">
               <div className="flex flex-col">
-                <div className="flex text-3xl font-outfit font-black text-offwhite">
+                <div className="flex text-3xl font-playfair font-medium text-offwhite">
                   <AnimatedNumber value={experts} springOptions={{ duration: 2000, bounce: 0 }} />+
                 </div>
-                <span className="text-sm uppercase tracking-widest text-lime">Experts</span>
+                <span className="text-sm uppercase tracking-widest text-white/50 font-inter">Experts</span>
               </div>
               <div className="w-px h-12 bg-white/20 mx-4" />
               <div className="flex flex-col">
-                <div className="text-3xl font-outfit font-black text-offwhite">
+                <div className="text-3xl font-playfair font-medium text-offwhite">
                   <AnimatedNumber value={awards} springOptions={{ duration: 2000, bounce: 0 }} />
                 </div>
-                <span className="text-sm uppercase tracking-widest text-lime">Awards</span>
+                <span className="text-sm uppercase tracking-widest text-white/50 font-inter">Awards</span>
               </div>
             </div>
           </motion.div>
@@ -54,15 +54,15 @@ export default function About() {
             className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 group"
           >
             <Image
-              src="/team.png"
+              src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800"
               alt="Chaos Digital Team"
               fill
-              className="object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
+              className="object-cover opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
             />
-            <div className="absolute inset-0 bg-void/20 group-hover:bg-transparent transition-colors duration-500" />
-            <div className="absolute bottom-6 left-6 bg-void/80 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-              <span className="text-lime font-outfit font-bold uppercase tracking-wider text-sm">
-                HQ - Bengaluru, India
+            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+            <div className="absolute bottom-6 left-6 bg-black/80 backdrop-blur-md px-6 py-3 rounded-full border border-white/10 translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
+              <span className="text-white/70 font-inter font-bold uppercase tracking-wider text-sm">
+                HQ - Lucknow, Uttar Pradesh
               </span>
             </div>
           </motion.div>

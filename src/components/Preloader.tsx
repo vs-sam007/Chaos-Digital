@@ -3,56 +3,59 @@
 import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { TextShimmer } from "@/components/core/text-shimmer";
 
 export default function Preloader() {
   const [show, setShow] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
+  const textFillRef = useRef<HTMLDivElement>(null);
   const counterRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     if (!show) return;
+    
+    // Prevent scrolling while preloader is active
+    document.body.style.overflow = "hidden";
 
     const tl = gsap.timeline({
       onComplete: () => {
+        document.body.style.overflow = "";
         setShow(false);
       },
     });
 
-    // Simulate progress counter
     const counter = { value: 0 };
     tl.to(counter, {
       value: 100,
-      duration: 1.5,
-      ease: "power2.inOut",
+      duration: 2.5,
+      ease: "power3.inOut",
       onUpdate: () => {
         if (counterRef.current) {
-          counterRef.current.innerText = `${Math.round(counter.value)}%`;
+          counterRef.current.innerText = `${Math.round(counter.value).toString().padStart(3, '0')}%`;
+        }
+        if (textFillRef.current) {
+          // Fill from bottom to top using clip-path
+          textFillRef.current.style.clipPath = `inset(${100 - counter.value}% 0 0 0)`;
         }
       },
     }, 0);
 
-    // Animate bottom loading bar
-    tl.to("#loading-bar", { scaleX: 1, duration: 1.5, ease: "power2.inOut" }, 0);
-
-    // Reveal logo text
-    tl.fromTo(
-      textRef.current,
-      { y: 50, opacity: 0, scale: 0.9 },
-      { y: 0, opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" },
-      "-=0.5"
+    // Expand the word slightly while it fills to add cinematic tension
+    tl.fromTo(".preload-text", 
+      { scale: 0.95, letterSpacing: "0.05em" },
+      { scale: 1, letterSpacing: "0.1em", duration: 2.5, ease: "power3.inOut" },
+      0
     );
 
-    // Hold for a moment
-    tl.to({}, { duration: 0.5 });
+    // Hold for a moment at 100%
+    tl.to({}, { duration: 0.6 });
 
-    // Fade out to reveal site
+    // Fade out gracefully (do not shutter up)
     tl.to(containerRef.current, {
       opacity: 0,
-      duration: 1,
+      duration: 1.2,
       ease: "power2.inOut",
     });
+
   }, { scope: containerRef, dependencies: [show] });
 
   if (!show) return null;
@@ -60,27 +63,38 @@ export default function Preloader() {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-void text-offwhite overflow-hidden"
+      className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-void text-white overflow-hidden"
     >
-      <div className="relative flex flex-col items-center">
-        {/* Dynamic Counter */}
-        <div 
-          ref={counterRef} 
-          className="text-8xl md:text-[150px] font-outfit font-black tracking-tighter text-white/5 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none select-none"
-        >
-          0%
+      <div className="relative flex flex-col items-center justify-center w-full">
+        {/* Base text (dimmed outline/gray) */}
+        <div className="preload-text text-5xl md:text-8xl lg:text-[120px] font-playfair font-medium uppercase text-white/10 text-center leading-none">
+          Chaos <br />
+          <span className="italic capitalize font-light text-white/5">Digital</span>
         </div>
         
-        {/* Brand Text */}
-        <div ref={textRef} className="relative z-10 opacity-0">
-          <TextShimmer duration={2} className="text-3xl md:text-5xl font-outfit font-black tracking-widest [--base-color:rgba(255,255,255,0.7)] [--base-gradient-color:rgba(204,255,0,1)] uppercase">
-            Chaos Digital
-          </TextShimmer>
+        {/* Fill text (solid white, revealed via clip-path) */}
+        <div 
+          ref={textFillRef} 
+          className="preload-text absolute top-0 left-0 text-5xl md:text-8xl lg:text-[120px] font-playfair font-medium uppercase text-white text-center leading-none pointer-events-none w-full h-full flex flex-col items-center justify-center"
+          style={{ clipPath: "inset(100% 0 0 0)" }}
+        >
+          <div>
+            Chaos <br />
+            <span className="italic capitalize font-light text-white/70">Digital</span>
+          </div>
         </div>
       </div>
       
-      {/* Loading Bar at bottom */}
-      <div className="absolute bottom-0 left-0 h-1 bg-lime w-full origin-left scale-x-0" id="loading-bar" />
+      {/* Ultra-luxurious minimal counter */}
+      <div className="absolute bottom-12 right-12 flex items-center gap-4">
+        <div className="w-16 h-[1px] bg-white/30" />
+        <div 
+          ref={counterRef} 
+          className="text-lg md:text-2xl font-inter font-light tracking-widest text-white/70 w-[60px] text-right"
+        >
+          000%
+        </div>
+      </div>
     </div>
   );
 }

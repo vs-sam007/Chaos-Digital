@@ -35,8 +35,8 @@ export default function Testimonials() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-outfit font-bold text-offwhite uppercase tracking-tighter">
-            Voices of <span className="text-lime">Impact</span>
+          <h2 className="text-4xl md:text-6xl font-playfair font-medium text-offwhite uppercase tracking-tighter">
+            Voices of <span className="italic text-white/40 capitalize">Impact</span>
           </h2>
         </motion.div>
 
@@ -50,12 +50,12 @@ export default function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="relative p-8 rounded-2xl bg-white/5 border border-white/10 flex flex-col gap-6 group hover:bg-white/10 transition-colors"
             >
-              <Quote className="w-10 h-10 text-lime/40 group-hover:text-lime transition-colors" />
-              <p className="text-xl text-offwhite font-light italic flex-grow">
+              <Quote className="w-10 h-10 text-white/20 group-hover:text-white transition-colors" />
+              <p className="text-2xl text-offwhite font-light italic flex-grow font-playfair">
                 "{testimonial.quote}"
               </p>
               <div className="flex items-center gap-4">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-lime/30 group-hover:border-lime transition-colors">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-white transition-colors grayscale group-hover:grayscale-0">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
@@ -64,10 +64,10 @@ export default function Testimonials() {
                   />
                 </div>
                 <div>
-                  <h4 className="text-lg font-outfit font-bold text-offwhite">
+                  <h4 className="text-lg font-playfair font-medium text-offwhite">
                     {testimonial.name}
                   </h4>
-                  <p className="text-lime text-sm tracking-widest uppercase">
+                  <p className="text-white/50 text-sm tracking-widest uppercase font-inter">
                     {testimonial.role}
                   </p>
                 </div>

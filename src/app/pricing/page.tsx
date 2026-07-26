@@ -57,15 +57,15 @@ export const metadata = {
 
 export default function PricingPage() {
   return (
-    <main className="bg-void min-h-screen text-offwhite font-outfit selection:bg-lime selection:text-void">
+    <main className="bg-void min-h-screen text-offwhite font-inter selection:bg-white/20 selection:text-white">
       <Navigation />
       
       <div className="pt-32 pb-16 md:pt-48 md:pb-32 px-6">
         <div className="container mx-auto">
           
           <div className="text-center max-w-4xl mx-auto mb-20">
-            <h1 className="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-6 leading-none">
-              Pricing <span className="text-lime">Catalogue</span>
+            <h1 className="text-5xl md:text-8xl font-playfair font-medium uppercase tracking-tighter mb-6 leading-none">
+              Pricing <span className="italic text-white/40 capitalize">Catalogue</span>
             </h1>
             <p className="text-xl text-offwhite/70 font-light leading-relaxed">
               End-to-End Digital Marketing Solutions for MSMEs, Startups & D2C Brands. 
@@ -75,8 +75,8 @@ export default function PricingPage() {
 
           {/* Quick Plan Comparison Table */}
           <div className="mb-32">
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-12 text-center">
-              Quick Plan <span className="text-lime">Comparison</span>
+            <h2 className="text-3xl md:text-5xl font-playfair font-medium uppercase tracking-tighter mb-12 text-center">
+              Quick Plan <span className="italic text-white/40 capitalize">Comparison</span>
             </h2>
             
             <div className="overflow-x-auto">
@@ -84,9 +84,9 @@ export default function PricingPage() {
                 <thead>
                   <tr className="border-b-2 border-white/10">
                     <th className="p-6 text-xl font-bold uppercase tracking-wider text-offwhite/50 w-1/4">Feature</th>
-                    <th className="p-6 text-2xl font-bold uppercase tracking-wider text-lime w-1/4 text-center">Grow</th>
-                    <th className="p-6 text-2xl font-bold uppercase tracking-wider text-offwhite w-1/4 text-center bg-white/5 rounded-t-2xl">Standard</th>
-                    <th className="p-6 text-2xl font-bold uppercase tracking-wider text-lime w-1/4 text-center">Premium</th>
+                    <th className="p-6 text-2xl font-playfair font-bold uppercase tracking-wider text-white w-1/4 text-center">Grow</th>
+                    <th className="p-6 text-2xl font-playfair font-bold uppercase tracking-wider text-white w-1/4 text-center bg-white/5 rounded-t-2xl">Standard</th>
+                    <th className="p-6 text-2xl font-playfair font-bold uppercase tracking-wider text-white w-1/4 text-center">Premium</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -94,13 +94,13 @@ export default function PricingPage() {
                     <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
                       <td className="p-6 font-medium text-offwhite/80">{feat.name}</td>
                       <td className="p-6 text-center text-offwhite/60">
-                        {feat.grow === false ? <X className="w-5 h-5 mx-auto text-red-500/50" /> : feat.grow === true ? <Check className="w-5 h-5 mx-auto text-lime" /> : feat.grow}
+                        {feat.grow === false ? <X className="w-5 h-5 mx-auto text-white/30" /> : feat.grow === true ? <Check className="w-5 h-5 mx-auto text-white" /> : feat.grow}
                       </td>
                       <td className="p-6 text-center font-semibold text-offwhite bg-white/5">
-                        {feat.standard === false ? <X className="w-5 h-5 mx-auto text-red-500/50" /> : feat.standard === true ? <Check className="w-5 h-5 mx-auto text-lime" /> : feat.standard}
+                        {feat.standard === false ? <X className="w-5 h-5 mx-auto text-white/30" /> : feat.standard === true ? <Check className="w-5 h-5 mx-auto text-white" /> : feat.standard}
                       </td>
-                      <td className="p-6 text-center text-lime font-medium">
-                        {feat.premium === false ? <X className="w-5 h-5 mx-auto text-red-500/50" /> : feat.premium === true ? <Check className="w-5 h-5 mx-auto text-lime" /> : feat.premium}
+                      <td className="p-6 text-center text-white font-medium">
+                        {feat.premium === false ? <X className="w-5 h-5 mx-auto text-white/30" /> : feat.premium === true ? <Check className="w-5 h-5 mx-auto text-white" /> : feat.premium}
                       </td>
                     </tr>
                   ))}
@@ -111,8 +111,8 @@ export default function PricingPage() {
 
           {/* One-Time Projects Table */}
           <div className="mb-32">
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-4 text-center">
-              One-Time <span className="text-lime">Projects</span>
+            <h2 className="text-3xl md:text-5xl font-playfair font-medium uppercase tracking-tighter mb-4 text-center">
+              One-Time <span className="italic text-white/40 capitalize">Projects</span>
             </h2>
             <p className="text-center text-offwhite/50 mb-12">Not ready for a monthly retainer? Start with a one-time project.</p>
             
@@ -130,7 +130,7 @@ export default function PricingPage() {
                     <tr key={i} className="border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors">
                       <td className="p-6 font-bold text-offwhite">{project.name}</td>
                       <td className="p-6 text-offwhite/60">{project.scope}</td>
-                      <td className="p-6 text-right font-medium text-lime">{project.price}</td>
+                      <td className="p-6 text-right font-medium text-white">{project.price}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -140,17 +140,17 @@ export default function PricingPage() {
 
           {/* Onboarding Process */}
           <div className="mb-32">
-            <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter mb-16 text-center">
-              Our <span className="text-lime">Onboarding</span> Process
+            <h2 className="text-3xl md:text-5xl font-playfair font-medium uppercase tracking-tighter mb-16 text-center">
+              Our <span className="italic text-white/40 capitalize">Onboarding</span> Process
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {onboardingSteps.map((step) => (
-                <div key={step.step} className="bg-white/5 border border-white/10 rounded-3xl p-8 relative hover:border-lime/30 transition-colors">
-                  <div className="text-6xl font-black text-white/5 absolute -top-4 -right-4 pointer-events-none">
+                <div key={step.step} className="bg-white/5 border border-white/10 rounded-3xl p-8 relative hover:border-white/30 transition-colors">
+                  <div className="text-6xl font-playfair font-medium text-white/5 absolute -top-4 -right-4 pointer-events-none">
                     0{step.step}
                   </div>
-                  <h3 className="text-2xl font-bold uppercase tracking-tighter mb-4 text-lime">
+                  <h3 className="text-2xl font-playfair uppercase tracking-wider mb-4 text-white">
                     Step {step.step} - {step.title}
                   </h3>
                   <p className="text-offwhite/70">
@@ -169,7 +169,7 @@ export default function PricingPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-offwhite/60">
               <div>
-                <h4 className="text-lime font-bold uppercase tracking-wider mb-2">Pricing Notes</h4>
+                <h4 className="text-white/70 font-inter font-bold uppercase tracking-wider mb-2">Pricing Notes</h4>
                 <ul className="list-disc pl-4 space-y-2">
                   <li>All prices are excluding GST (18% applicable).</li>
                   <li>Ad spend / influencer fees are NOT included in agency fees.</li>
@@ -178,7 +178,7 @@ export default function PricingPage() {
               </div>
               
               <div>
-                <h4 className="text-lime font-bold uppercase tracking-wider mb-2">Payment Terms</h4>
+                <h4 className="text-white/70 font-inter font-bold uppercase tracking-wider mb-2">Payment Terms</h4>
                 <ul className="list-disc pl-4 space-y-2">
                   <li>Monthly retainers are due on the 1st of each month (advance).</li>
                   <li>One-time projects: 50% advance, 50% on delivery.</li>
@@ -190,7 +190,7 @@ export default function PricingPage() {
           
           <div className="mt-20 text-center">
              <Link href="/#contact">
-               <MagneticButton className="bg-lime text-void font-bold uppercase tracking-wider px-12 py-5 rounded-full text-lg hover:shadow-[0_0_40px_rgba(204,255,0,0.4)] transition-all inline-block">
+               <MagneticButton className="bg-white text-void font-inter font-bold uppercase tracking-widest px-12 py-5 rounded-full text-lg hover:bg-white/90 transition-all inline-block">
                  Book a Free Discovery Call
                </MagneticButton>
              </Link>

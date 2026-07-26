@@ -1,24 +1,26 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import MagneticButton from "./MagneticButton";
-import { ArrowRight } from "lucide-react";
-import { TextShimmer } from "@/components/core/text-shimmer";
-import { TextRoll } from "@/components/core/text-roll";
-import { GlowEffect } from "@/components/core/glow-effect";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
+// Placeholder arrays for luxury brand logos
+const brands = [
+  { id: 1, src: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=200", speed: -0.1, top: "20%", left: "10%" },
+  { id: 2, src: "https://images.unsplash.com/photo-1622839958043-4a6c9cfbc61d?q=80&w=200", speed: 0.15, top: "15%", left: "75%" },
+  { id: 3, src: "https://images.unsplash.com/photo-1614680376573-df3480f0c6ff?q=80&w=200", speed: -0.2, top: "60%", left: "15%" },
+  { id: 4, src: "https://images.unsplash.com/photo-1563694983011-6f4d90358083?q=80&w=200", speed: 0.1, top: "65%", left: "80%" },
+  { id: 5, src: "https://images.unsplash.com/photo-1601158935942-52255782d322?q=80&w=200", speed: -0.15, top: "40%", left: "5%" },
+  { id: 6, src: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=200", speed: 0.2, top: "35%", left: "85%" },
+];
+
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const bgRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
+  const textRef = useRef<HTMLHeadingElement>(null);
   const [mounted, setMounted] = useState(false);
   
   useEffect(() => {
@@ -26,6 +28,13 @@ export default function Hero() {
   }, []);
 
   useGSAP(() => {
+    // Reveal text animation
+    gsap.fromTo(textRef.current, 
+      { opacity: 0, y: 50 }, 
+      { opacity: 1, y: 0, duration: 1.5, ease: "power3.out", delay: 0.5 }
+    );
+
+    // Parallax timeline
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: containerRef.current,
@@ -35,121 +44,58 @@ export default function Hero() {
       },
     });
 
-    // Massive background parallax & scale
-    tl.to(bgRef.current, { yPercent: 40, scale: 1.2, opacity: 0.2, ease: "none" }, 0);
-    
-    // Content parallax and fade
-    tl.to(contentRef.current, { yPercent: 60, opacity: 0, ease: "power1.inOut" }, 0);
-    
-    // Title expansion
-    tl.to(titleRef.current, { scale: 1.2, filter: "blur(4px)", ease: "power1.inOut" }, 0);
+    // Fade and scale main text slightly on scroll
+    tl.to(textRef.current, { opacity: 0.1, scale: 0.95, ease: "power1.inOut" }, 0);
 
-    // Scatter particles intensely on scroll
-    tl.to(".hero-particle", {
-      y: () => -300 - Math.random() * 300,
-      x: () => (Math.random() - 0.5) * 400,
-      scale: () => 1 + Math.random() * 2,
-      opacity: 0,
-      ease: "power2.out"
-    }, 0);
+    // Anti-gravity float for brands
+    brands.forEach((brand) => {
+      tl.to(`#brand-${brand.id}`, {
+        y: () => window.innerHeight * brand.speed * 2,
+        ease: "none",
+      }, 0);
+    });
+
   }, { scope: containerRef });
 
   return (
     <section
       ref={containerRef}
-      className="relative min-h-[110vh] flex flex-col items-center justify-center overflow-hidden bg-void"
+      className="relative min-h-[110vh] flex items-center justify-center overflow-hidden bg-void pt-20"
     >
-      {/* Animated Background Elements */}
-      <div ref={bgRef} className="absolute inset-0 pointer-events-none transform-gpu origin-center">
-        <Image
-          src="/hero-bg.png"
-          alt="Abstract Anti-Gravity Background"
-          fill
-          className="object-cover opacity-60 mix-blend-screen"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-void/50 to-void" />
-      </div>
-
-      {/* Content */}
-      <div
-        ref={contentRef}
-        className="relative z-10 container mx-auto px-6 text-center flex flex-col items-center"
-      >
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.2 }}
+      {/* Anti-Gravity Floating Brands (Behind Text) */}
+      {mounted && brands.map((brand) => (
+        <div
+          key={brand.id}
+          id={`brand-${brand.id}`}
+          className="absolute w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden opacity-30 grayscale hover:grayscale-0 hover:opacity-100 transition-all duration-500 z-0"
+          style={{ top: brand.top, left: brand.left }}
         >
-          <div className="inline-block py-1 px-3 rounded-full bg-lime/10 font-outfit text-sm font-semibold tracking-widest mb-6 border border-lime/20">
-            <TextShimmer duration={1.5} className="[--base-color:rgba(204,255,0,0.7)] [--base-gradient-color:rgba(255,255,255,1)]">
-              CHAOS DIGITAL
-            </TextShimmer>
-          </div>
-        </motion.div>
-        
-        <motion.div
-          ref={titleRef as any}
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="text-6xl md:text-8xl lg:text-[120px] leading-[0.9] font-outfit font-black tracking-tighter mb-8 text-offwhite origin-center"
-        >
-          WEBSITES THAT <br />
-          <TextRoll className="text-transparent bg-clip-text bg-gradient-to-r from-lime to-green-400">
-            DEFY GRAVITY.
-          </TextRoll>
-        </motion.div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="text-lg md:text-2xl text-offwhite/70 max-w-2xl mb-12 font-light"
-        >
-          We don't build brochures. We engineer weightless, high-converting digital experiences that pull your audience in.
-        </motion.p>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center gap-6"
-        >
-          <div className="relative">
-            <GlowEffect colors={['#ccff00', '#00ff66', '#aaff00', '#ffffff']} mode="colorShift" blur="medium" duration={3} scale={0.9} />
-            <MagneticButton className="relative z-10 bg-lime text-void px-8 py-4 rounded-full text-lg hover:shadow-[0_0_30px_rgba(204,255,0,0.4)] transition-shadow">
-              Book a Free Consultation
-            </MagneticButton>
-          </div>
-          
-          <a href="#work" className="group flex items-center gap-2 text-offwhite/80 hover:text-lime transition-colors font-outfit uppercase tracking-wider text-sm font-bold">
-            See Our Work
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </a>
-        </motion.div>
-      </div>
-
-      {/* Floating Particles */}
-      {mounted && [...Array(15)].map((_, i) => (
-        <motion.div
-          key={i}
-          className="hero-particle absolute w-1 h-1 bg-lime/50 rounded-full blur-[1px]"
-          initial={{
-            x: `${Math.random() * 100}vw`,
-            y: `${Math.random() * 100}vh`,
-          }}
-          animate={{
-            y: [null, `${Math.random() * -100}vh`],
-            opacity: [0, 1, 0],
-          }}
-          transition={{
-            duration: 10 + Math.random() * 20,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
+          <Image
+            src={brand.src}
+            alt="Brand Logo"
+            fill
+            className="object-cover"
+          />
+        </div>
       ))}
+
+      {/* Main Luxury Headline */}
+      <div className="relative z-10 container mx-auto px-6 text-center flex flex-col items-center">
+        <h1 
+          ref={textRef}
+          className="text-5xl md:text-7xl lg:text-[100px] leading-[1.1] font-playfair font-medium text-white max-w-6xl mx-auto"
+        >
+          The World’s Most <span className="italic text-white/70">Ambitious</span> Brands Choose to Work With Us
+        </h1>
+        
+        {/* Scroll Indicator */}
+        <div className="absolute -bottom-32 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
+          <span className="text-xs uppercase tracking-widest font-inter">Scroll</span>
+          <div className="w-[1px] h-12 bg-white/30 overflow-hidden relative">
+            <div className="absolute top-0 left-0 w-full h-full bg-white animate-scroll-down" />
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
