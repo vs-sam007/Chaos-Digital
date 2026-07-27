@@ -28,18 +28,18 @@ export default function Contact() {
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-lime/5 rounded-full blur-[150px] pointer-events-none" />
 
-      <div className="container mx-auto px-6 max-w-5xl relative z-10">
+      <div className="container mx-auto px-6 max-w-7xl relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
           >
-            <h2 className="text-5xl md:text-7xl font-outfit font-black tracking-tighter text-offwhite leading-[1.1] mb-6">
+            <h2 className="text-6xl md:text-8xl text-offwhite uppercase leading-[0.85] mb-8 font-playfair">
               READY TO <br />
-              <span className="text-lime">IGNITE?</span>
+              <span className="text-transparent" style={{ WebkitTextStroke: "2px rgba(255,255,255,0.6)" }}>IGNITE?</span>
             </h2>
-            <p className="text-xl text-offwhite/70 font-light max-w-md mb-12">
+            <p className="text-lg text-offwhite/70 font-inter max-w-md mb-12">
               Drop your details below. We'll audit your current presence and show you exactly how to defy gravity.
             </p>
             

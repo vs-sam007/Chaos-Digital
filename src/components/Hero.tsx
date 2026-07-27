@@ -83,9 +83,11 @@ export default function Hero() {
       <div className="relative z-10 container mx-auto px-6 text-center flex flex-col items-center">
         <h1 
           ref={textRef}
-          className="text-5xl md:text-7xl lg:text-[100px] leading-[1.1] font-playfair font-medium text-white max-w-6xl mx-auto"
+          className="text-7xl md:text-9xl lg:text-[120px] leading-[0.9] font-playfair text-offwhite max-w-[1200px] mx-auto tracking-normal uppercase"
         >
-          The World’s Most <span className="italic text-white/70">Ambitious</span> Brands Choose to Work With Us
+          THE WORLD'S MOST <br />
+          <span className="text-transparent" style={{ WebkitTextStroke: "2px rgba(255,255,255,0.6)" }}>AMBITIOUS</span> BRANDS <br />
+          CHOOSE US
         </h1>
         
         {/* Scroll Indicator */}

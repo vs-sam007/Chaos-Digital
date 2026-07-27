@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Globe, MessageSquare, Share2, Camera } from "lucide-react";
+import { Logo } from "./Logo";
 
 export default function Footer() {
   return (
@@ -11,10 +12,10 @@ export default function Footer() {
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-          <div className="col-span-1 md:col-span-2 lg:col-span-1">
-            <span className="inline-block py-1 px-3 rounded-full bg-lime/10 text-lime font-outfit text-sm font-semibold tracking-widest mb-6 border border-lime/20">
-              CHAOS DIGITAL
-            </span>
+          <div className="col-span-1 md:col-span-2 lg:col-span-1 flex flex-col items-start">
+            <div className="mb-6 transform scale-75 origin-left">
+              <Logo />
+            </div>
             <p className="text-offwhite/60 font-light mt-4 max-w-xs">
               Websites that defy gravity. We engineer weightless, high-converting digital experiences.
             </p>
