@@ -34,9 +34,6 @@ export default function Hero() {
       },
     });
 
-    // Fade and scale main text slightly on scroll
-    tl.to(textRef.current, { opacity: 0.1, scale: 0.95, ease: "power1.inOut" }, 0);
-
   }, { scope: containerRef });
 
   return (

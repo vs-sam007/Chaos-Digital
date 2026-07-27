@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -17,21 +18,25 @@ const stages = [
     num: "01",
     title: "Discovery",
     desc: "We dive deep into your universe. Understanding your brand, your enemies, and your goals.",
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800",
   },
   {
     num: "02",
     title: "Strategy",
     desc: "Architecting the blueprint. We map out the user journey and conversion pathways.",
+    image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800",
   },
   {
     num: "03",
     title: "Build",
     desc: "The heavy lifting. We write the code, design the interfaces, and construct the engine.",
+    image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800",
   },
   {
     num: "04",
     title: "Launch & Grow",
     desc: "Ignition. We deploy, monitor, and aggressively scale your digital presence.",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
   },
 ];
 
@@ -46,18 +51,15 @@ export default function Process() {
     mm.add("(min-width: 768px)", () => {
       if (!containerRef.current || !scrollRef.current) return;
       
-      let scrollWidth = scrollRef.current.scrollWidth;
-      let windowWidth = window.innerWidth;
-      
       gsap.to(scrollRef.current, {
-        x: () => -(scrollWidth - windowWidth),
+        x: () => -(scrollRef.current!.scrollWidth - window.innerWidth),
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
           pin: true,
           scrub: 1,
           start: "top top",
-          end: () => `+=${scrollWidth}`,
+          end: () => `+=${scrollRef.current!.scrollWidth}`,
           invalidateOnRefresh: true,
         }
       });
@@ -66,8 +68,12 @@ export default function Process() {
 
   return (
     <section className="relative bg-transparent overflow-hidden" ref={containerRef}>
+      {/* Ambient Background Glows */}
+      <div className="absolute top-[20%] left-[10%] w-[50vw] h-[50vw] rounded-full bg-[var(--color-banana)]/10 blur-[100px] pointer-events-none z-0" />
+      <div className="absolute bottom-[10%] right-[10%] w-[40vw] h-[40vw] rounded-full bg-[var(--color-mauve)]/10 blur-[100px] pointer-events-none z-0" />
+
       {/* Horizontal Scroll Area */}
-      <div className="md:h-screen w-full flex items-center py-32 md:py-0">
+      <div className="md:h-screen w-full flex items-center py-32 md:py-0 relative z-10">
         <div 
           ref={scrollRef} 
           className="flex flex-col md:flex-row gap-16 md:gap-32 px-6 md:px-32 w-full md:w-[max-content]"
@@ -85,17 +91,32 @@ export default function Process() {
 
           {/* Cards */}
           {stages.map((stage) => (
-            <div key={stage.num} className="w-full md:w-[35vw] flex-shrink-0 flex items-center">
-              <div className="w-full h-full hype-card p-8 md:p-12 relative overflow-hidden flex flex-col justify-center">
-                <span className="absolute -top-10 -right-10 text-[140px] md:text-[180px] font-playfair font-medium text-[var(--color-amethyst)]/5 leading-none select-none pointer-events-none">
+            <div key={stage.num} className="w-full md:w-[30vw] flex-shrink-0 flex items-center">
+              <div className="w-full h-[500px] md:h-[600px] rounded-[2rem] relative overflow-hidden flex flex-col justify-end border border-[var(--color-amethyst)]/10 group shadow-2xl">
+                {/* Background Image */}
+                <Image 
+                  src={stage.image}
+                  alt={stage.title}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700 z-0"
+                />
+                
+                {/* Premium Dark Gradient Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-void)] via-[var(--color-void)]/40 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-500 z-10" />
+
+                <span className="absolute -top-6 -right-6 text-[140px] md:text-[180px] font-playfair font-bold text-[var(--color-ivory)]/10 leading-none select-none pointer-events-none z-20">
                   {stage.num}
                 </span>
-                <div className="relative z-10">
-                  <span className="text-[var(--color-amethyst)]/50 font-inter font-bold text-xl md:text-2xl mb-4 block uppercase tracking-widest">Stage {stage.num}</span>
-                  <h3 className="text-3xl md:text-4xl font-playfair font-medium text-[var(--color-amethyst)] mb-6">
+
+                {/* Content Reveal */}
+                <div className="relative z-20 p-8 md:p-12 transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                  <span className="text-[var(--color-banana)] font-inter font-bold text-sm md:text-base mb-3 block uppercase tracking-widest drop-shadow-md">
+                    Stage {stage.num}
+                  </span>
+                  <h3 className="text-3xl md:text-4xl font-playfair font-medium text-[var(--color-ivory)] mb-4 drop-shadow-md">
                     {stage.title}
                   </h3>
-                  <p className="text-lg md:text-xl text-[var(--color-amethyst)]/70 font-light leading-relaxed font-inter">
+                  <p className="text-base md:text-lg text-[var(--color-ivory)]/90 font-light leading-relaxed font-inter opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100 drop-shadow-sm">
                     {stage.desc}
                   </p>
                 </div>

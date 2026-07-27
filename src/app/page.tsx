@@ -7,6 +7,7 @@ import Process from "@/components/Process";
 import Services from "@/components/Services";
 import StatsReveal from "@/components/StatsReveal";
 import PricingSection from "@/components/PricingSection";
+import TextMarquee from "@/components/TextMarquee";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -23,6 +24,7 @@ export default function Home() {
       <Services />
       <StatsReveal />
       <PricingSection />
+      <TextMarquee />
       <Testimonials />
       <Contact />
       <Footer />
