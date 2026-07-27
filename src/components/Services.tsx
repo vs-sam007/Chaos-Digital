@@ -54,9 +54,9 @@ export default function Services() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="text-4xl md:text-6xl font-playfair font-medium text-offwhite uppercase tracking-tighter"
+              className="text-6xl md:text-8xl text-offwhite uppercase tracking-tighter font-playfair"
             >
-              Our <span className="italic text-white/40 capitalize">Arsenal</span>
+              OUR <span className="text-transparent" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.8)" }}>ARSENAL</span>
             </motion.h2>
           </div>
           <motion.p 
@@ -79,7 +79,7 @@ export default function Services() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
             >
-              <TiltCard className="h-full !p-0 overflow-hidden">
+              <TiltCard className="h-full !p-0 overflow-hidden group">
                 <div className="relative w-full h-48">
                   <Image
                     src={service.image}
@@ -92,11 +92,11 @@ export default function Services() {
                     {service.icon}
                   </div>
                 </div>
-                <div className="p-6 pt-2">
-                  <h3 className="text-2xl font-playfair font-medium text-offwhite transition-colors mb-2">
+                <div className="p-6 pt-2 flex flex-col">
+                  <h3 className="text-3xl text-offwhite transition-colors mb-2 uppercase tracking-wide group-hover:text-lime">
                     {service.title}
                   </h3>
-                  <p className="text-offwhite/70 font-inter">
+                  <p className="text-offwhite/70 font-inter text-sm">
                     {service.description}
                   </p>
                 </div>

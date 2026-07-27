@@ -4,6 +4,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
+import { Logo } from "./Logo";
+
 const navLinks = [
   { name: "Index", href: "/" },
   { name: "Services", href: "/services" },
@@ -28,8 +30,8 @@ export default function Navigation() {
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="text-xl font-playfair font-bold text-white tracking-widest uppercase">
-          Chaos Digital
+        <Link href="/" className="hover:opacity-80 transition-opacity">
+          <Logo />
         </Link>
 
         <nav className="hidden md:flex gap-8">

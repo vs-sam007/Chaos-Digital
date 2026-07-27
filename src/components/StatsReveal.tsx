@@ -73,10 +73,10 @@ export default function StatsReveal() {
         {/* Right Side: Pinned Text */}
         <div className="w-full md:w-1/2 h-screen flex flex-col justify-center absolute md:relative right-0 pointer-events-none z-0 px-6">
           <div ref={rightTextRef} className="w-full max-w-lg mx-auto">
-            <h2 className="text-6xl md:text-8xl lg:text-[120px] font-playfair font-medium leading-[0.9] text-white">
+            <h2 className="text-6xl md:text-8xl lg:text-[110px] font-playfair font-medium leading-[0.9] text-white uppercase tracking-tight">
               490+ <br />
-              <span className="text-white/40 italic">Completed</span><br />
-              Projects
+              <span className="text-transparent" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.4)" }}>COMPLETED</span><br />
+              PROJECTS
             </h2>
             <p className="mt-8 text-white/50 font-inter text-lg max-w-sm font-light">
               We engineer luxury digital experiences for brands that refuse to compromise. From vision to execution, we deliver perfection.
