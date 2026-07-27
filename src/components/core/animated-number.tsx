@@ -1,35 +1,69 @@
 'use client';
+
 import { cn } from '@/lib/utils';
-import { motion, SpringOptions, useSpring, useTransform } from 'motion/react';
-import { useEffect } from 'react';
+import { motion, SpringOptions, useInView, useSpring, useTransform } from 'motion/react';
+import { useEffect, useMemo, useRef } from 'react';
 
 export type AnimatedNumberProps = {
   value: number;
+  from?: number;
   className?: string;
   springOptions?: SpringOptions;
   as?: React.ElementType;
+  format?: (value: number) => string;
+  formatOptions?: Intl.NumberFormatOptions;
+  locale?: string;
+  startOnView?: boolean;
 };
 
 export function AnimatedNumber({
   value,
+  from = 0,
   className,
   springOptions,
   as = 'span',
+  format,
+  formatOptions,
+  locale,
+  startOnView = true,
 }: AnimatedNumberProps) {
-  const MotionComponent = motion.create(as as keyof JSX.IntrinsicElements);
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, margin: '-50px' });
 
-  const spring = useSpring(value, springOptions);
-  const display = useTransform(spring, (current) =>
-    Math.round(current).toLocaleString()
-  );
+  const Component = useMemo(() => {
+    if (typeof as === 'string' && as in motion) {
+      return (motion as unknown as Record<string, React.ElementType>)[as];
+    }
+    return motion.create(as);
+  }, [as]);
+
+  const spring = useSpring(from, springOptions);
+
+  const display = useTransform(spring, (current) => {
+    if (format) {
+      return format(current);
+    }
+    if (formatOptions || locale) {
+      return new Intl.NumberFormat(locale, formatOptions).format(current);
+    }
+    return Math.round(current).toLocaleString(locale);
+  });
 
   useEffect(() => {
-    spring.set(value);
-  }, [spring, value]);
+    if (!startOnView || isInView) {
+      spring.set(value);
+    }
+  }, [spring, value, isInView, startOnView]);
 
   return (
-    <MotionComponent className={cn('tabular-nums', className)}>
+    <Component
+      ref={ref as unknown as React.RefObject<HTMLSpanElement>}
+      aria-label={value.toString()}
+      className={cn('tabular-nums', className)}
+    >
       {display}
-    </MotionComponent>
+    </Component>
   );
 }
+
+
