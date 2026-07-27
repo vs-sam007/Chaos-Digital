@@ -65,7 +65,7 @@ export default function Process() {
   }, { scope: containerRef });
 
   return (
-    <section className="relative bg-void overflow-hidden" ref={containerRef}>
+    <section className="relative bg-transparent overflow-hidden" ref={containerRef}>
       {/* Horizontal Scroll Area */}
       <div className="md:h-screen w-full flex items-center py-32 md:py-0">
         <div 
@@ -75,10 +75,10 @@ export default function Process() {
           
           {/* Header Title locked at start */}
           <div className="w-full md:w-[40vw] flex-shrink-0 flex flex-col justify-center">
-            <h2 className="text-5xl md:text-8xl font-playfair font-medium text-offwhite uppercase tracking-tighter mb-6">
-              Our <span className="italic text-white/40 capitalize">Methodology</span>
+            <h2 className="text-5xl md:text-8xl font-playfair font-medium text-[var(--color-amethyst)] uppercase tracking-tighter mb-6">
+              Our <span className="text-transparent" style={{ WebkitTextStroke: "2px var(--color-amethyst)" }}>Methodology</span>
             </h2>
-            <p className="text-xl text-offwhite/60 font-inter">
+            <p className="text-xl text-[var(--color-amethyst)]/80 font-inter">
               A systematic approach to defying digital gravity. No guesswork. Just precision engineering.
             </p>
           </div>
@@ -86,16 +86,16 @@ export default function Process() {
           {/* Cards */}
           {stages.map((stage) => (
             <div key={stage.num} className="w-full md:w-[35vw] flex-shrink-0 flex items-center">
-              <div className="w-full h-full bg-white/5 border border-white/10 rounded-3xl p-8 md:p-12 relative overflow-hidden flex flex-col justify-center">
-                <span className="absolute -top-10 -right-10 text-[140px] md:text-[180px] font-playfair font-medium text-white/5 leading-none select-none pointer-events-none">
+              <div className="w-full h-full hype-card p-8 md:p-12 relative overflow-hidden flex flex-col justify-center">
+                <span className="absolute -top-10 -right-10 text-[140px] md:text-[180px] font-playfair font-medium text-[var(--color-amethyst)]/5 leading-none select-none pointer-events-none">
                   {stage.num}
                 </span>
                 <div className="relative z-10">
-                  <span className="text-white/50 font-inter font-bold text-xl md:text-2xl mb-4 block uppercase tracking-widest">Stage {stage.num}</span>
-                  <h3 className="text-3xl md:text-4xl font-playfair font-medium text-offwhite mb-6">
+                  <span className="text-[var(--color-amethyst)]/50 font-inter font-bold text-xl md:text-2xl mb-4 block uppercase tracking-widest">Stage {stage.num}</span>
+                  <h3 className="text-3xl md:text-4xl font-playfair font-medium text-[var(--color-amethyst)] mb-6">
                     {stage.title}
                   </h3>
-                  <p className="text-lg md:text-xl text-offwhite/60 font-light leading-relaxed font-inter">
+                  <p className="text-lg md:text-xl text-[var(--color-amethyst)]/70 font-light leading-relaxed font-inter">
                     {stage.desc}
                   </p>
                 </div>
@@ -105,26 +105,26 @@ export default function Process() {
 
           {/* Before & After section embedded at the end of the scroll */}
           <div className="w-full md:w-[60vw] flex-shrink-0 flex flex-col justify-center md:pl-16">
-            <h3 className="text-3xl font-playfair font-medium text-offwhite uppercase tracking-tighter mb-8 text-center md:text-left">
-              Before & After <span className="italic text-white/40 capitalize">Excellence</span>
+            <h3 className="text-3xl font-playfair font-medium text-[var(--color-amethyst)] uppercase tracking-tighter mb-8 text-center md:text-left">
+              Before & After <span className="text-transparent" style={{ WebkitTextStroke: "1px var(--color-amethyst)" }}>Excellence</span>
             </h3>
             <div className="w-full">
               <ImageComparison
-                className="aspect-[16/10] w-full rounded-2xl border border-white/10 dark:border-zinc-800"
+                className="aspect-[16/10] w-full rounded-[1.5rem] border border-[var(--color-amethyst)]/10"
                 enableHover
               >
                 <ImageComparisonImage
                   src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800"
                   alt="Before Chaos"
                   position="left"
-                  className="grayscale"
+                  className=""
                 />
                 <ImageComparisonImage
                   src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800"
                   alt="After Chaos"
                   position="right"
                 />
-                <ImageComparisonSlider className="bg-white text-black" />
+                <ImageComparisonSlider className="bg-[var(--color-amethyst)] text-[var(--color-ivory)] border-[var(--color-amethyst)]" />
               </ImageComparison>
             </div>
           </div>

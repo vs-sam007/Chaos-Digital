@@ -50,7 +50,7 @@ export default function StatsReveal() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative bg-void py-32 h-[300vh]">
+    <section ref={containerRef} className="relative bg-transparent py-32 h-[300vh]">
       <div className="container mx-auto px-6 h-full flex flex-col md:flex-row relative">
         
         {/* Left Side: Photos revealing on scroll */}
@@ -58,14 +58,16 @@ export default function StatsReveal() {
           {photos.map((photo, i) => (
             <div 
               key={photo.id}
-              className={`stat-photo relative w-[80%] max-w-[400px] h-[300px] md:h-[500px] rounded-lg overflow-hidden shadow-2xl ${i % 2 === 0 ? 'self-start' : 'self-end'}`}
+              className={`stat-photo relative w-[80%] max-w-[400px] h-[300px] md:h-[500px] rounded-[1.5rem] overflow-hidden hype-card p-2 ${i % 2 === 0 ? 'self-start' : 'self-end'}`}
             >
-              <Image
-                src={photo.src}
-                alt="Studio Photo"
-                fill
-                className="object-cover grayscale hover:grayscale-0 transition-all duration-700 pointer-events-auto"
-              />
+              <div className="relative w-full h-full rounded-xl overflow-hidden">
+                <Image
+                  src={photo.src}
+                  alt="Studio Photo"
+                  fill
+                  className="object-cover transition-all duration-700 pointer-events-auto"
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -73,12 +75,12 @@ export default function StatsReveal() {
         {/* Right Side: Pinned Text */}
         <div className="w-full md:w-1/2 h-screen flex flex-col justify-center absolute md:relative right-0 pointer-events-none z-0 px-6">
           <div ref={rightTextRef} className="w-full max-w-lg mx-auto">
-            <h2 className="text-6xl md:text-8xl lg:text-[110px] font-playfair font-medium leading-[0.9] text-white uppercase tracking-tight">
+            <h2 className="text-6xl md:text-8xl lg:text-[110px] font-playfair font-medium leading-[0.9] text-[var(--color-amethyst)] uppercase tracking-tight">
               490+ <br />
-              <span className="text-transparent" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.4)" }}>COMPLETED</span><br />
+              <span className="text-transparent" style={{ WebkitTextStroke: "2px var(--color-amethyst)" }}>COMPLETED</span><br />
               PROJECTS
             </h2>
-            <p className="mt-8 text-white/50 font-inter text-lg max-w-sm font-light">
+            <p className="mt-8 text-[var(--color-amethyst)]/80 font-inter text-lg max-w-sm font-light">
               We engineer luxury digital experiences for brands that refuse to compromise. From vision to execution, we deliver perfection.
             </p>
           </div>

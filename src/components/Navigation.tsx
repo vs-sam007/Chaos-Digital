@@ -15,22 +15,43 @@ const navLinks = [
 
 export default function Navigation() {
   const { scrollY } = useScroll();
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(true);
+  const [introFinished, setIntroFinished] = useState(false);
+
+  useEffect(() => {
+    // Wait for the preloader to finish (4.5s)
+    const timer = setTimeout(() => {
+      setIntroFinished(true);
+      // Only show if we are still at the top
+      if (window.scrollY <= 50) {
+        setIsHidden(false);
+      }
+    }, 4500);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     return scrollY.on("change", (latest) => {
-      setIsScrolled(latest > 50);
+      if (!introFinished) return;
+      
+      // Only show when at the very top
+      if (latest > 50) {
+        setIsHidden(true);
+      } else {
+        setIsHidden(false);
+      }
     });
-  }, [scrollY]);
+  }, [scrollY, introFinished]);
 
   return (
     <motion.header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${
-        isScrolled ? "bg-void/70 backdrop-blur-md py-4 border-b border-white/10" : "bg-transparent py-8"
-      }`}
+      initial={{ y: "-100%" }}
+      animate={{ y: isHidden ? "-100%" : "0%" }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+      className="fixed top-0 inset-x-0 z-50 bg-transparent py-8"
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <Link href="/" className="hover:opacity-80 transition-opacity">
+        <Link href="/" className="hover:opacity-80 transition-opacity flex items-center">
           <Logo />
         </Link>
 
@@ -39,10 +60,10 @@ export default function Navigation() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-inter text-white/70 hover:text-white uppercase tracking-widest transition-colors relative group"
+              className="text-sm font-inter text-[var(--color-amethyst)]/70 hover:text-[var(--color-amethyst)] uppercase tracking-widest transition-colors relative group"
             >
               {link.name}
-              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all duration-300 group-hover:w-full" />
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[var(--color-amethyst)] transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </nav>

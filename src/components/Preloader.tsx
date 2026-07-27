@@ -63,34 +63,34 @@ export default function Preloader() {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-void text-white overflow-hidden"
+      className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-[var(--color-ivory)] text-[var(--color-amethyst)] overflow-hidden"
     >
       <div className="relative flex flex-col items-center justify-center w-full">
         {/* Base text (dimmed outline/gray) */}
-        <div className="preload-text text-5xl md:text-8xl lg:text-[120px] font-playfair font-medium uppercase text-white/10 text-center leading-none">
+        <div className="preload-text text-5xl md:text-8xl lg:text-[120px] font-playfair font-medium uppercase text-[var(--color-amethyst)]/20 text-center leading-none">
           Chaos <br />
-          <span className="italic capitalize font-light text-white/5">Digital</span>
+          <span className="italic capitalize font-light opacity-50">Digital</span>
         </div>
         
-        {/* Fill text (solid white, revealed via clip-path) */}
+        {/* Fill text (solid void, revealed via clip-path) */}
         <div 
           ref={textFillRef} 
-          className="preload-text absolute top-0 left-0 text-5xl md:text-8xl lg:text-[120px] font-playfair font-medium uppercase text-white text-center leading-none pointer-events-none w-full h-full flex flex-col items-center justify-center"
+          className="preload-text absolute top-0 left-0 text-5xl md:text-8xl lg:text-[120px] font-playfair font-medium uppercase text-[var(--color-amethyst)] text-center leading-none pointer-events-none w-full h-full flex flex-col items-center justify-center"
           style={{ clipPath: "inset(100% 0 0 0)" }}
         >
           <div>
             Chaos <br />
-            <span className="italic capitalize font-light text-white/70">Digital</span>
+            <span className="italic capitalize font-light">Digital</span>
           </div>
         </div>
       </div>
       
       {/* Ultra-luxurious minimal counter */}
       <div className="absolute bottom-12 right-12 flex items-center gap-4">
-        <div className="w-16 h-[1px] bg-white/30" />
+        <div className="w-16 h-[1px] bg-[var(--color-amethyst)]/30" />
         <div 
           ref={counterRef} 
-          className="text-lg md:text-2xl font-inter font-light tracking-widest text-white/70 w-[60px] text-right"
+          className="text-lg md:text-2xl font-inter font-light tracking-widest text-[var(--color-amethyst)] w-[60px] text-right"
         >
           000%
         </div>

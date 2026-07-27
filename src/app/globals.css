@@ -1,17 +1,22 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-void: #000000;
-  --color-lime: #ffffff;
-  --color-offwhite: #ffffff;
-  --color-muted: #a1a1aa;
+  --color-ivory: #F9F9F6; /* Clean off-white background */
+  --color-amethyst: #2B135A; /* Deep purple primary text */
+  --color-mauve: #9D4EDD; /* Vibrant purple accent */
+  --color-banana: #FFE135; /* Soft yellow accent */
+  --color-void: #111111; /* Dark grey fallback */
+  
+  --color-accent1: var(--color-mauve);
+  --color-accent2: var(--color-amethyst);
+  --color-accent3: var(--color-banana);
 
   --font-outfit: var(--font-playfair);
   --font-playfair: var(--font-playfair);
   --font-inter: var(--font-inter);
   
-  --color-background: var(--color-void);
-  --color-foreground: var(--color-offwhite);
+  --color-background: var(--color-ivory);
+  --color-foreground: var(--color-amethyst);
 }
 
 @layer base {
@@ -27,14 +32,15 @@
   }
 
   ::selection {
-    background-color: var(--color-lime);
-    color: var(--color-void);
+    background-color: var(--color-banana);
+    color: var(--color-amethyst);
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-playfair), serif;
     font-weight: 700;
     letter-spacing: -0.02em;
+    color: var(--color-amethyst);
   }
 }
 
@@ -53,4 +59,18 @@ html.lenis, html.lenis body {
 }
 .lenis.lenis-smooth iframe {
   pointer-events: none;
+}
+
+/* Hypefluency Card Utilities */
+.hype-card {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 20px rgba(43, 19, 90, 0.05);
+  border: 1px solid rgba(43, 19, 90, 0.05);
+  transition: all 0.3s ease;
+}
+
+.hype-card:hover {
+  box-shadow: 0 10px 40px rgba(43, 19, 90, 0.1);
+  transform: translateY(-5px);
 }

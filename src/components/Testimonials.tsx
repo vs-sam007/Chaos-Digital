@@ -27,7 +27,7 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <section className="relative py-32 bg-void overflow-hidden">
+    <section className="relative py-32 bg-transparent overflow-hidden">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -35,8 +35,8 @@ export default function Testimonials() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-playfair font-medium text-offwhite uppercase tracking-tighter">
-            Voices of <span className="italic text-white/40 capitalize">Impact</span>
+          <h2 className="text-4xl md:text-6xl font-playfair font-medium text-[var(--color-amethyst)] uppercase tracking-tighter">
+            Voices of <span className="text-transparent" style={{ WebkitTextStroke: "2px var(--color-amethyst)" }}>Impact</span>
           </h2>
         </motion.div>
 
@@ -48,14 +48,14 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative p-8 rounded-2xl bg-white/5 border border-white/10 flex flex-col gap-6 group hover:bg-white/10 transition-colors"
+              className="relative p-8 hype-card flex flex-col gap-6 group transition-all duration-300"
             >
-              <Quote className="w-10 h-10 text-white/20 group-hover:text-white transition-colors" />
-              <p className="text-2xl text-offwhite font-light italic flex-grow font-playfair">
+              <Quote className="w-10 h-10 text-[var(--color-amethyst)]/20 group-hover:text-[var(--color-amethyst)] transition-colors" />
+              <p className="text-2xl text-[var(--color-amethyst)] font-light flex-grow font-playfair">
                 "{testimonial.quote}"
               </p>
               <div className="flex items-center gap-4">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-white transition-colors grayscale group-hover:grayscale-0">
+                <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-[var(--color-amethyst)]/20 group-hover:border-[var(--color-amethyst)] transition-colors">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
@@ -64,10 +64,10 @@ export default function Testimonials() {
                   />
                 </div>
                 <div>
-                  <h4 className="text-lg font-playfair font-medium text-offwhite">
+                  <h4 className="text-lg font-playfair font-medium text-[var(--color-amethyst)]">
                     {testimonial.name}
                   </h4>
-                  <p className="text-white/50 text-sm tracking-widest uppercase font-inter">
+                  <p className="text-[var(--color-amethyst)]/50 text-sm tracking-widest uppercase font-inter">
                     {testimonial.role}
                   </p>
                 </div>

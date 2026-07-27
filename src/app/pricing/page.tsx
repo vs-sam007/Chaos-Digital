@@ -57,7 +57,7 @@ export const metadata = {
 
 export default function PricingPage() {
   return (
-    <main className="bg-void min-h-screen text-offwhite font-inter selection:bg-white/20 selection:text-white">
+    <main className="bg-[var(--color-ivory)] min-h-screen text-void font-inter selection:bg-void/20 selection:text-[var(--color-ivory)]">
       <Navigation />
       
       <div className="pt-32 pb-16 md:pt-48 md:pb-32 px-6">
@@ -65,9 +65,9 @@ export default function PricingPage() {
           
           <div className="text-center max-w-4xl mx-auto mb-20">
             <h1 className="text-5xl md:text-8xl font-playfair font-medium uppercase tracking-tighter mb-6 leading-none">
-              Pricing <span className="italic text-white/40 capitalize">Catalogue</span>
+              Pricing <span className="italic text-void/40 capitalize">Catalogue</span>
             </h1>
-            <p className="text-xl text-offwhite/70 font-light leading-relaxed">
+            <p className="text-xl text-void/70 font-light leading-relaxed">
               End-to-End Digital Marketing Solutions for MSMEs, Startups & D2C Brands. 
               No hidden charges, just transparent growth systems.
             </p>
@@ -76,31 +76,31 @@ export default function PricingPage() {
           {/* Quick Plan Comparison Table */}
           <div className="mb-32">
             <h2 className="text-3xl md:text-5xl font-playfair font-medium uppercase tracking-tighter mb-12 text-center">
-              Quick Plan <span className="italic text-white/40 capitalize">Comparison</span>
+              Quick Plan <span className="italic text-void/40 capitalize">Comparison</span>
             </h2>
             
             <div className="overflow-x-auto">
               <table className="w-full min-w-[800px] text-left border-collapse">
                 <thead>
-                  <tr className="border-b-2 border-white/10">
-                    <th className="p-6 text-xl font-bold uppercase tracking-wider text-offwhite/50 w-1/4">Feature</th>
-                    <th className="p-6 text-2xl font-playfair font-bold uppercase tracking-wider text-white w-1/4 text-center">Grow</th>
-                    <th className="p-6 text-2xl font-playfair font-bold uppercase tracking-wider text-white w-1/4 text-center bg-white/5 rounded-t-2xl">Standard</th>
-                    <th className="p-6 text-2xl font-playfair font-bold uppercase tracking-wider text-white w-1/4 text-center">Premium</th>
+                  <tr className="border-b-2 border-void/10">
+                    <th className="p-6 text-xl font-bold uppercase tracking-wider text-void/50 w-1/4">Feature</th>
+                    <th className="p-6 text-2xl font-playfair font-bold uppercase tracking-wider text-[var(--color-amethyst)] w-1/4 text-center">Grow</th>
+                    <th className="p-6 text-2xl font-playfair font-bold uppercase tracking-wider text-[var(--color-amethyst)] w-1/4 text-center bg-void/5 rounded-t-2xl">Standard</th>
+                    <th className="p-6 text-2xl font-playfair font-bold uppercase tracking-wider text-[var(--color-amethyst)] w-1/4 text-center">Premium</th>
                   </tr>
                 </thead>
                 <tbody>
                   {comparisonFeatures.map((feat, i) => (
-                    <tr key={i} className="border-b border-white/5 hover:bg-white/[0.02] transition-colors">
-                      <td className="p-6 font-medium text-offwhite/80">{feat.name}</td>
-                      <td className="p-6 text-center text-offwhite/60">
-                        {feat.grow === false ? <X className="w-5 h-5 mx-auto text-white/30" /> : feat.grow === true ? <Check className="w-5 h-5 mx-auto text-white" /> : feat.grow}
+                    <tr key={i} className="border-b border-void/5 hover:bg-white/[0.02] transition-colors">
+                      <td className="p-6 font-medium text-void/80">{feat.name}</td>
+                      <td className="p-6 text-center text-void/60">
+                        {feat.grow === false ? <X className="w-5 h-5 mx-auto text-void/30" /> : feat.grow === true ? <Check className="w-5 h-5 mx-auto text-[var(--color-amethyst)]" /> : feat.grow}
                       </td>
-                      <td className="p-6 text-center font-semibold text-offwhite bg-white/5">
-                        {feat.standard === false ? <X className="w-5 h-5 mx-auto text-white/30" /> : feat.standard === true ? <Check className="w-5 h-5 mx-auto text-white" /> : feat.standard}
+                      <td className="p-6 text-center font-semibold text-void bg-void/5">
+                        {feat.standard === false ? <X className="w-5 h-5 mx-auto text-void/30" /> : feat.standard === true ? <Check className="w-5 h-5 mx-auto text-[var(--color-amethyst)]" /> : feat.standard}
                       </td>
-                      <td className="p-6 text-center text-white font-medium">
-                        {feat.premium === false ? <X className="w-5 h-5 mx-auto text-white/30" /> : feat.premium === true ? <Check className="w-5 h-5 mx-auto text-white" /> : feat.premium}
+                      <td className="p-6 text-center text-[var(--color-amethyst)] font-medium">
+                        {feat.premium === false ? <X className="w-5 h-5 mx-auto text-void/30" /> : feat.premium === true ? <Check className="w-5 h-5 mx-auto text-[var(--color-amethyst)]" /> : feat.premium}
                       </td>
                     </tr>
                   ))}
@@ -112,14 +112,14 @@ export default function PricingPage() {
           {/* One-Time Projects Table */}
           <div className="mb-32">
             <h2 className="text-3xl md:text-5xl font-playfair font-medium uppercase tracking-tighter mb-4 text-center">
-              One-Time <span className="italic text-white/40 capitalize">Projects</span>
+              One-Time <span className="italic text-void/40 capitalize">Projects</span>
             </h2>
-            <p className="text-center text-offwhite/50 mb-12">Not ready for a monthly retainer? Start with a one-time project.</p>
+            <p className="text-center text-void/50 mb-12">Not ready for a monthly retainer? Start with a one-time project.</p>
             
-            <div className="overflow-x-auto bg-white/5 rounded-3xl border border-white/10 p-2">
+            <div className="overflow-x-auto bg-void/5 rounded-3xl border border-void/10 p-2">
               <table className="w-full text-left border-collapse min-w-[700px]">
                 <thead>
-                  <tr className="border-b border-white/10 text-offwhite/50 text-sm uppercase tracking-wider">
+                  <tr className="border-b border-void/10 text-void/50 text-sm uppercase tracking-wider">
                     <th className="p-6">Service</th>
                     <th className="p-6">Scope</th>
                     <th className="p-6 text-right">Starting Price</th>
@@ -127,10 +127,10 @@ export default function PricingPage() {
                 </thead>
                 <tbody>
                   {oneTimeProjects.map((project, i) => (
-                    <tr key={i} className="border-b border-white/5 last:border-0 hover:bg-white/5 transition-colors">
-                      <td className="p-6 font-bold text-offwhite">{project.name}</td>
-                      <td className="p-6 text-offwhite/60">{project.scope}</td>
-                      <td className="p-6 text-right font-medium text-white">{project.price}</td>
+                    <tr key={i} className="border-b border-void/5 last:border-0 hover:bg-void/5 transition-colors">
+                      <td className="p-6 font-bold text-void">{project.name}</td>
+                      <td className="p-6 text-void/60">{project.scope}</td>
+                      <td className="p-6 text-right font-medium text-[var(--color-amethyst)]">{project.price}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -141,19 +141,19 @@ export default function PricingPage() {
           {/* Onboarding Process */}
           <div className="mb-32">
             <h2 className="text-3xl md:text-5xl font-playfair font-medium uppercase tracking-tighter mb-16 text-center">
-              Our <span className="italic text-white/40 capitalize">Onboarding</span> Process
+              Our <span className="italic text-void/40 capitalize">Onboarding</span> Process
             </h2>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {onboardingSteps.map((step) => (
-                <div key={step.step} className="bg-white/5 border border-white/10 rounded-3xl p-8 relative hover:border-white/30 transition-colors">
-                  <div className="text-6xl font-playfair font-medium text-white/5 absolute -top-4 -right-4 pointer-events-none">
+                <div key={step.step} className="bg-void/5 border border-void/10 rounded-3xl p-8 relative hover:border-void/30 transition-colors">
+                  <div className="text-6xl font-playfair font-medium text-void/5 absolute -top-4 -right-4 pointer-events-none">
                     0{step.step}
                   </div>
-                  <h3 className="text-2xl font-playfair uppercase tracking-wider mb-4 text-white">
+                  <h3 className="text-2xl font-playfair uppercase tracking-wider mb-4 text-[var(--color-amethyst)]">
                     Step {step.step} - {step.title}
                   </h3>
-                  <p className="text-offwhite/70">
+                  <p className="text-void/70">
                     {step.desc}
                   </p>
                 </div>
@@ -162,14 +162,14 @@ export default function PricingPage() {
           </div>
 
           {/* Terms & Disclaimers */}
-          <div className="bg-void border border-white/10 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold uppercase tracking-tighter mb-6 border-b border-white/10 pb-4">
+          <div className="bg-offwhite border border-void/10 rounded-3xl p-8 md:p-12 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold uppercase tracking-tighter mb-6 border-b border-void/10 pb-4">
               Terms, Notes & Disclaimers
             </h3>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-offwhite/60">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-void/60">
               <div>
-                <h4 className="text-white/70 font-inter font-bold uppercase tracking-wider mb-2">Pricing Notes</h4>
+                <h4 className="text-void/70 font-inter font-bold uppercase tracking-wider mb-2">Pricing Notes</h4>
                 <ul className="list-disc pl-4 space-y-2">
                   <li>All prices are excluding GST (18% applicable).</li>
                   <li>Ad spend / influencer fees are NOT included in agency fees.</li>
@@ -178,7 +178,7 @@ export default function PricingPage() {
               </div>
               
               <div>
-                <h4 className="text-white/70 font-inter font-bold uppercase tracking-wider mb-2">Payment Terms</h4>
+                <h4 className="text-void/70 font-inter font-bold uppercase tracking-wider mb-2">Payment Terms</h4>
                 <ul className="list-disc pl-4 space-y-2">
                   <li>Monthly retainers are due on the 1st of each month (advance).</li>
                   <li>One-time projects: 50% advance, 50% on delivery.</li>
@@ -190,7 +190,7 @@ export default function PricingPage() {
           
           <div className="mt-20 text-center">
              <Link href="/#contact">
-               <MagneticButton className="bg-white text-void font-inter font-bold uppercase tracking-widest px-12 py-5 rounded-full text-lg hover:bg-white/90 transition-all inline-block">
+               <MagneticButton className="bg-[var(--color-amethyst)] text-[var(--color-ivory)] font-inter font-bold uppercase tracking-widest px-12 py-5 rounded-full text-lg hover:bg-[var(--color-amethyst)]/90 transition-all inline-block">
                  Book a Free Discovery Call
                </MagneticButton>
              </Link>

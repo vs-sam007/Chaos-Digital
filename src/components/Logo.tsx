@@ -9,7 +9,7 @@ export function Logo({ className = "" }: LogoProps) {
   return (
     <div className={`flex items-center justify-center select-none ${className}`}>
       <Image 
-        src="/logo.png" 
+        src="/logo-tech.png" 
         alt="Chaos Digital Logo" 
         width={120} 
         height={120} 

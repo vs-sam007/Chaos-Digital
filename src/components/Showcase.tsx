@@ -5,7 +5,7 @@ import { InfiniteSlider } from '@/components/core/infinite-slider';
 
 export default function Showcase() {
   return (
-    <section className="relative py-32 bg-void overflow-hidden border-t border-white/5">
+    <section className="relative py-32 bg-offwhite overflow-hidden border-t border-void/5">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
         <motion.div
           initial={{ opacity: 0, x: -50 }}
@@ -13,10 +13,10 @@ export default function Showcase() {
           viewport={{ once: true, margin: "-100px" }}
           className="flex-1"
         >
-          <h2 className="text-4xl md:text-5xl lg:text-7xl font-outfit font-black tracking-tighter text-offwhite leading-[1.1]">
+          <h2 className="text-4xl md:text-5xl lg:text-7xl font-outfit font-black tracking-tighter text-void leading-[1.1]">
             OUR <span className="text-lime">INSPIRATION.</span>
           </h2>
-          <p className="mt-8 text-xl md:text-2xl text-offwhite/70 font-light max-w-lg">
+          <p className="mt-8 text-xl md:text-2xl text-void/70 font-light max-w-lg">
             A continuous loop of culture, art, and sound that fuels our creativity and defines our aesthetic.
           </p>
         </motion.div>

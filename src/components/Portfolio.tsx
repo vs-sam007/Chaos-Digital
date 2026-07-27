@@ -46,13 +46,13 @@ export default function Portfolio() {
   }, { scope: containerRef });
 
   return (
-    <section id="work" ref={containerRef} className="relative py-32 bg-void portfolio-grid-section">
+    <section id="work" ref={containerRef} className="relative py-32 bg-offwhite portfolio-grid-section">
       <div className="container mx-auto px-6">
         <div className="mb-24 text-center">
-          <h2 className="text-4xl md:text-6xl font-outfit font-bold text-offwhite uppercase tracking-tighter">
+          <h2 className="text-4xl md:text-6xl font-outfit font-bold text-void uppercase tracking-tighter">
             Proof of <span className="text-lime">Gravity</span>
           </h2>
-          <p className="mt-4 text-offwhite/60 text-lg max-w-xl mx-auto">
+          <p className="mt-4 text-void/60 text-lg max-w-xl mx-auto">
             We don't deal in vanity metrics. We deal in measurable, undeniable impact.
           </p>
         </div>
@@ -88,7 +88,7 @@ function ProjectCard({ project, aspect = "1/1" }: { project: any, aspect?: strin
   return (
     <div className="group cursor-pointer">
       <div 
-        className="w-full rounded-2xl mb-6 overflow-hidden relative bg-white/5"
+        className="w-full rounded-2xl mb-6 overflow-hidden relative bg-void/5"
         style={{ aspectRatio: aspect }}
       >
         <Image
@@ -97,9 +97,9 @@ function ProjectCard({ project, aspect = "1/1" }: { project: any, aspect?: strin
           fill
           className="object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
         />
-        <div className="absolute inset-0 bg-void/30 group-hover:bg-transparent transition-colors duration-500" />
+        <div className="absolute inset-0 bg-offwhite/30 group-hover:bg-transparent transition-colors duration-500" />
         <div className="absolute bottom-6 left-6 right-6 flex justify-between items-end translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-          <div className="bg-void/80 backdrop-blur-md px-6 py-3 rounded-full border border-white/10">
+          <div className="bg-offwhite/80 backdrop-blur-md px-6 py-3 rounded-full border border-void/10">
             <span className="text-lime font-outfit font-bold uppercase tracking-wider text-sm">
               View Case Study
             </span>
@@ -110,10 +110,10 @@ function ProjectCard({ project, aspect = "1/1" }: { project: any, aspect?: strin
         </div>
       </div>
       <div>
-        <h3 className="text-3xl font-outfit font-bold text-offwhite mb-2">
+        <h3 className="text-3xl font-outfit font-bold text-void mb-2">
           {project.client}
         </h3>
-        <p className="text-xl text-offwhite/60 font-light">
+        <p className="text-xl text-void/60 font-light">
           {project.metric}
         </p>
       </div>

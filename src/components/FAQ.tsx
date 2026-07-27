@@ -27,7 +27,7 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="relative py-32 bg-void border-t border-white/5 overflow-hidden">
+    <section className="relative py-32 bg-offwhite border-t border-void/5 overflow-hidden">
       <div className="container mx-auto px-6 max-w-3xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -35,7 +35,7 @@ export default function FAQ() {
           viewport={{ once: true, margin: "-100px" }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl md:text-6xl font-outfit font-bold text-offwhite uppercase tracking-tighter">
+          <h2 className="text-4xl md:text-6xl font-outfit font-bold text-void uppercase tracking-tighter">
             System <span className="text-lime">Queries</span>
           </h2>
         </motion.div>
@@ -49,14 +49,14 @@ export default function FAQ() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className={`border ${
-                openIndex === index ? "border-lime/50 bg-white/5" : "border-white/10"
+                openIndex === index ? "border-lime/50 bg-void/5" : "border-void/10"
               } rounded-2xl overflow-hidden transition-colors`}
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full px-6 py-6 flex items-center justify-between text-left focus:outline-none"
               >
-                <span className="text-xl font-outfit font-bold text-offwhite pr-8">
+                <span className="text-xl font-outfit font-bold text-void pr-8">
                   {faq.question}
                 </span>
                 <span className="text-lime flex-shrink-0">
@@ -72,7 +72,7 @@ export default function FAQ() {
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                   >
-                    <div className="px-6 pb-6 text-offwhite/70">
+                    <div className="px-6 pb-6 text-void/70">
                       {faq.answer}
                     </div>
                   </motion.div>

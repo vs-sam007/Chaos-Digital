@@ -61,14 +61,14 @@ export default function ParallaxDivider({ src, alt = "Divider", height = "70vh",
           src={src}
           alt={alt}
           fill
-          className="object-cover opacity-60 mix-blend-luminosity"
+          className="object-cover"
         />
-        <div className="absolute inset-0 bg-void/70" />
+        <div className="absolute inset-0 bg-offwhite/70" />
         <div className="absolute inset-0 bg-gradient-to-b from-void via-transparent to-void" />
       </div>
 
       {title && (
-        <h2 className="parallax-text relative z-10 text-5xl md:text-9xl font-outfit font-black text-offwhite uppercase tracking-tighter text-center">
+        <h2 className="parallax-text relative z-10 text-5xl md:text-9xl font-outfit font-black text-void uppercase tracking-tighter text-center">
           {title}
         </h2>
       )}

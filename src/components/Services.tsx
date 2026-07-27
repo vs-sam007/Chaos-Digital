@@ -46,7 +46,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="relative py-32 bg-void overflow-hidden">
+    <section className="relative py-32 bg-[var(--color-banana)] overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="mb-16 flex flex-col md:flex-row justify-between items-end gap-8">
           <div>
@@ -54,9 +54,9 @@ export default function Services() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              className="text-6xl md:text-8xl text-offwhite uppercase tracking-tighter font-playfair"
+              className="text-6xl md:text-8xl text-[var(--color-amethyst)] uppercase tracking-tighter font-playfair"
             >
-              OUR <span className="text-transparent" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.8)" }}>ARSENAL</span>
+              OUR <span className="text-transparent" style={{ WebkitTextStroke: "1px var(--color-amethyst)" }}>ARSENAL</span>
             </motion.h2>
           </div>
           <motion.p 
@@ -64,7 +64,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ delay: 0.2 }}
-            className="text-offwhite/60 max-w-md font-inter"
+            className="text-[var(--color-amethyst)]/60 max-w-md font-inter"
           >
             Everything you need to break through the noise and scale your digital presence to the next dimension.
           </motion.p>
@@ -79,24 +79,24 @@ export default function Services() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
             >
-              <TiltCard className="h-full !p-0 overflow-hidden group">
+              <TiltCard className="h-full !p-0 overflow-hidden group hype-card">
                 <div className="relative w-full h-48">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover opacity-80 grayscale group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                    className="object-cover group-hover:scale-105 transition-all duration-500"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-void to-transparent" />
-                  <div className="absolute bottom-4 left-6 p-3 bg-black/40 border border-white/10 backdrop-blur-md rounded-xl transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                  <div className="absolute bottom-4 left-6 p-3 bg-black/40 border border-white/20 backdrop-blur-md rounded-xl transition-all duration-300">
                     {service.icon}
                   </div>
                 </div>
-                <div className="p-6 pt-2 flex flex-col">
-                  <h3 className="text-3xl text-offwhite transition-colors mb-2 uppercase tracking-wide group-hover:text-lime">
+                <div className="p-6 pt-2 flex flex-col relative z-10 bg-transparent mt-4">
+                  <h3 className="text-3xl text-[var(--color-amethyst)] transition-colors mb-2 uppercase tracking-wide group-hover:text-accent1 font-playfair font-bold">
                     {service.title}
                   </h3>
-                  <p className="text-offwhite/70 font-inter text-sm">
+                  <p className="text-[var(--color-amethyst)]/70 font-inter text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </div>

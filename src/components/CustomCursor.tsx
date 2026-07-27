@@ -71,24 +71,12 @@ export default function CustomCursor() {
           height: 16,
         }}
         animate={{
-          scale: isHovered ? 4 : isClicking ? 0.7 : 1,
+          scale: isHovered ? 1.5 : isClicking ? 0.7 : 1,
         }}
         transition={{
           scale: { type: "spring", stiffness: 400, damping: 25 },
         }}
       >
-        {/* Subtle text inside the dot that only appears on hover */}
-        <motion.span
-          className="text-black font-playfair font-bold text-[4px] tracking-widest uppercase absolute"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{
-            opacity: isHovered ? 1 : 0,
-            scale: isHovered ? 1 : 0.5,
-          }}
-          transition={{ duration: 0.2 }}
-        >
-          View
-        </motion.span>
       </motion.div>
     </>
   );

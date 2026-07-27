@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
+import LogoMarquee from "@/components/LogoMarquee";
 import About from "@/components/About";
 import CurvedCarousel from "@/components/CurvedCarousel";
 import Process from "@/components/Process";
@@ -12,9 +13,10 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-void min-h-screen text-offwhite font-inter selection:bg-white/20 selection:text-white">
+    <main className="bg-transparent min-h-screen text-[var(--color-amethyst)] font-inter">
       <Navigation />
       <Hero />
+      <LogoMarquee />
       <About />
       <CurvedCarousel />
       <Process />

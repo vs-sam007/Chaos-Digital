@@ -31,7 +31,7 @@ export default function RootLayout({
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col font-inter bg-void">
+      <body className="min-h-full flex flex-col font-inter relative bg-[var(--color-ivory)] text-[var(--color-amethyst)]">
         <Preloader />
         <SmoothScroll>
           <CustomCursor />

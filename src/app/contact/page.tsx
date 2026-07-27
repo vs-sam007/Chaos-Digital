@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 
 export default function ContactPage() {
   return (
-    <main className="bg-void min-h-screen text-offwhite font-inter selection:bg-white/20 selection:text-white pt-20">
+    <main className="bg-[var(--color-ivory)] min-h-screen text-void font-inter selection:bg-void/20 selection:text-[var(--color-ivory)] pt-20">
       <Navigation />
       <Contact />
       <Footer />
