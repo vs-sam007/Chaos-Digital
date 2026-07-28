@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WorkHero from "@/components/work/WorkHero";
 import FeaturedProject from "@/components/work/FeaturedProject";
+import CTOBanner from "@/components/work/CTOBanner";
 import ProjectGrid from "@/components/work/ProjectGrid";
 import BottomCTA from "@/components/work/BottomCTA";
 
@@ -16,6 +17,7 @@ export default function WorkPage() {
       <Navigation />
       <WorkHero />
       <FeaturedProject />
+      <CTOBanner />
       <ProjectGrid />
       <BottomCTA />
       <Footer />

@@ -4,7 +4,14 @@ import { Check, X } from "lucide-react";
 import Link from "next/link";
 import MagneticButton from "@/components/MagneticButton";
 
-const comparisonFeatures = [
+interface ComparisonFeature {
+  name: string;
+  grow: string | boolean;
+  standard: string | boolean;
+  premium: string | boolean;
+}
+
+const comparisonFeatures: ComparisonFeature[] = [
   { name: "Monthly Price Range", grow: "₹7,999–₹14,999", standard: "₹19,999–₹34,999", premium: "₹49,999–₹89,999" },
   { name: "Social Media Platforms", grow: "2 platforms", standard: "3 platforms", premium: "5 platforms" },
   { name: "Posts Per Month", grow: "8–12 posts", standard: "20–25 posts", premium: "30+ posts" },
