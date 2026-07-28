@@ -11,6 +11,14 @@
   --color-accent2: var(--color-amethyst);
   --color-accent3: var(--color-banana);
 
+  /* Hero Redesign Colors */
+  --color-hero-bg: #F8F8F5;
+  --color-hero-card: #FFFFFF;
+  --color-hero-text-primary: #111111;
+  --color-hero-text-secondary: #666666;
+  --color-hero-accent-primary: #6C5CE7;
+  --color-hero-accent-secondary: #8B5CF6;
+
   --font-outfit: var(--font-playfair);
   --font-playfair: var(--font-playfair);
   --font-inter: var(--font-inter);

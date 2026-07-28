@@ -27,33 +27,45 @@ export default function ServicesIndexPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {servicesData.map((service) => {
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {servicesData.map((service, index) => {
               const IconComponent = (Icons as any)[service.iconName] || Icons.Code;
               
               return (
                 <Link 
                   key={service.id} 
                   href={`/services/${service.slug}`}
-                  className="group block"
+                  className="group block h-full"
+                  style={{ animationDelay: `${index * 0.05}s` }}
                 >
-                  <div className="h-full bg-void/5 border border-void/10 rounded-3xl p-8 relative overflow-hidden transition-all duration-300 hover:border-void/30 hover:bg-void/10">
-                    <div className="w-16 h-16 bg-void/5 border border-void/10 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                       <IconComponent className="w-8 h-8 text-void/70" />
+                  <div className="h-full bg-white/40 backdrop-blur-xl border border-[var(--color-amethyst)]/10 rounded-[2rem] p-10 relative overflow-hidden transition-all duration-700 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(40,10,60,0.1)] hover:bg-white/80 hover:border-[var(--color-amethyst)]/30 group">
+                    
+                    {/* Premium Hover Gradient Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-amethyst)]/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
+
+                    <div className="relative z-10 flex flex-col h-full">
+                      <div className="w-16 h-16 bg-[var(--color-amethyst)]/5 border border-[var(--color-amethyst)]/10 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 group-hover:bg-[var(--color-amethyst)] group-hover:text-white transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-sm">
+                         <IconComponent className="w-7 h-7 text-[var(--color-amethyst)] group-hover:text-white transition-colors duration-500" />
+                      </div>
+                      
+                      <h3 className="text-2xl font-playfair font-medium uppercase tracking-tighter mb-4 text-[var(--color-amethyst)]">
+                        {service.title}
+                      </h3>
+                      
+                      <p className="text-[var(--color-amethyst)]/60 font-light line-clamp-3 mb-8 font-inter leading-relaxed flex-grow">
+                        {service.description}
+                      </p>
+                      
+                      <div className="flex items-center justify-between w-full mt-auto">
+                        <div className="text-sm font-inter font-semibold uppercase tracking-widest text-[var(--color-amethyst)]/40 group-hover:text-[var(--color-amethyst)] transition-colors duration-300">
+                          Explore
+                        </div>
+                        <div className="w-10 h-10 rounded-full border border-[var(--color-amethyst)]/20 flex items-center justify-center group-hover:bg-[var(--color-amethyst)] group-hover:border-transparent transition-all duration-500 overflow-hidden">
+                          <ArrowUpRight className="w-5 h-5 text-[var(--color-amethyst)] group-hover:text-white group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duration-300" />
+                        </div>
+                      </div>
                     </div>
-                    
-                    <h3 className="text-2xl font-playfair font-medium uppercase tracking-tighter mb-4 group-hover:text-[var(--color-amethyst)] transition-colors">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="text-void/60 font-light line-clamp-3 mb-6 font-inter">
-                      {service.description}
-                    </p>
-                    
-                    <div className="flex items-center gap-2 text-sm font-inter font-bold uppercase tracking-wider text-void/80 opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
-                      Explore Service
-                      <ArrowUpRight className="w-4 h-4" />
-                    </div>
+
                   </div>
                 </Link>
               );

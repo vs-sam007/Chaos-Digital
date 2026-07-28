@@ -9,10 +9,10 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const photos = [
-  { id: 1, src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=600", rotation: -5, yOffset: 0 },
-  { id: 2, src: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=600", rotation: 5, yOffset: 50 },
-  { id: 3, src: "https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=600", rotation: -3, yOffset: 100 },
-  { id: 4, src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=600", rotation: 6, yOffset: 150 },
+  { id: 1, src: "/10.jpeg", rotation: -5, yOffset: 0, aspect: "aspect-[3/4] md:aspect-[9/16]", maxWidth: "max-w-[350px] md:max-w-[450px]" },
+  { id: 2, src: "/9.png", rotation: 5, yOffset: 50, aspect: "aspect-video", maxWidth: "max-w-[600px] md:max-w-[850px]" },
+  { id: 3, src: "/8.png", rotation: -3, yOffset: 100, aspect: "aspect-video", maxWidth: "max-w-[600px] md:max-w-[850px]" },
+  { id: 4, src: "/7.png", rotation: 6, yOffset: 150, aspect: "aspect-video", maxWidth: "max-w-[600px] md:max-w-[850px]" },
 ];
 
 const statsContent = [
@@ -115,7 +115,7 @@ export default function StatsReveal() {
           {photos.map((photo, i) => (
             <div 
               key={photo.id}
-              className={`stat-photo relative w-full max-w-[700px] h-[400px] md:h-[700px] rounded-[2rem] overflow-hidden hype-card p-3 ${i % 2 === 0 ? 'self-start' : 'self-end'}`}
+              className={`stat-photo relative w-full ${photo.maxWidth} ${photo.aspect} rounded-[2rem] overflow-hidden hype-card p-3 ${i % 2 === 0 ? 'self-start' : 'self-end'}`}
             >
               <div className="relative w-full h-full rounded-xl overflow-hidden">
                 <Image

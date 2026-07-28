@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Globe, MessageSquare, Share2, Camera } from "lucide-react";
+import Link from "next/link";
 import { Logo } from "./Logo";
 
 export default function Footer() {
@@ -33,11 +34,11 @@ export default function Footer() {
               Navigation
             </h4>
             <ul className="flex flex-col gap-3">
-              <li><a href="/#work" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Work</a></li>
-              <li><a href="/services" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Services</a></li>
-              <li><a href="/pricing" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Pricing</a></li>
-              <li><a href="/#about" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">About</a></li>
-              <li><a href="/#contact" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Contact</a></li>
+              <li><Link href="/work" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Work</Link></li>
+              <li><Link href="/services" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Services</Link></li>
+              <li><Link href="/pricing" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Pricing</Link></li>
+              <li><Link href="/about" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">About</Link></li>
+              <li><Link href="/contact" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Contact</Link></li>
             </ul>
           </div>
 
