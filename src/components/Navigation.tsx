@@ -82,8 +82,9 @@ export default function Navigation() {
         className={`fixed top-0 inset-x-0 z-50 py-4 transition-colors duration-500 ${isMobileMenuOpen ? 'bg-[var(--color-ivory)]' : 'bg-transparent'}`}
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <Link href="/" className="hover:opacity-80 transition-opacity flex items-center -mt-6 relative z-50" onClick={() => setIsMobileMenuOpen(false)}>
+          <Link href="/" className="hover:opacity-80 transition-opacity flex items-center gap-3 -mt-6 relative z-50" onClick={() => setIsMobileMenuOpen(false)}>
             <Logo />
+            <span className="font-playfair font-bold text-2xl text-[var(--color-amethyst)] mt-5">Chaos Digital</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -92,7 +93,7 @@ export default function Navigation() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-sm font-inter text-[var(--color-amethyst)]/70 hover:text-[var(--color-amethyst)] uppercase tracking-widest transition-colors relative group"
+                className="text-base font-bold font-inter text-[var(--color-amethyst)]/70 hover:text-[var(--color-amethyst)] uppercase tracking-widest transition-colors relative group"
               >
                 {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[var(--color-amethyst)] transition-all duration-300 group-hover:w-full" />

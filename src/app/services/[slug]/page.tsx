@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import { CheckCircle2, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import * as Icons from "lucide-react";
+import { Spotlight } from "@/components/core/spotlight";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
@@ -40,8 +41,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
       
       {/* Ambient Background Mesh */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden">
-        <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-[var(--color-amethyst)]/5 rounded-full blur-[120px] animate-pulse" />
-        <div className="absolute top-[40%] left-[-10%] w-[40vw] h-[40vw] bg-[var(--color-amethyst)]/5 rounded-full blur-[100px]" />
+        <Spotlight className="from-accent1 via-accent2 to-accent3 blur-3xl opacity-20" size={500} />
+        <div className="absolute top-[0%] right-[-5%] w-[60vw] h-[60vw] bg-accent2/10 rounded-full blur-[150px] animate-pulse" style={{ animationDuration: '10s' }} />
+        <div className="absolute top-[40%] left-[-10%] w-[50vw] h-[50vw] bg-accent1/10 rounded-full blur-[120px]" />
       </div>
       
       <div className="pt-32 pb-24 md:pt-48 md:pb-32 px-6">
@@ -62,12 +64,13 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
               
               {/* Header */}
               <div className="mb-16">
-                <div className="w-24 h-24 bg-[var(--color-amethyst)]/10 border border-[var(--color-amethyst)]/20 rounded-3xl flex items-center justify-center mb-10 shadow-sm">
-                   <IconComponent className="w-10 h-10 text-[var(--color-amethyst)]" />
+                <div className="w-24 h-24 bg-gradient-to-br from-accent1/10 to-accent2/10 border border-[var(--color-amethyst)]/10 rounded-3xl flex items-center justify-center mb-10 shadow-sm relative group overflow-hidden">
+                   <div className="absolute inset-0 bg-gradient-to-tr from-accent1/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                   <IconComponent className="w-10 h-10 text-accent1 group-hover:scale-110 transition-transform duration-500 relative z-10" />
                 </div>
                 
-                <h1 className="text-5xl md:text-7xl lg:text-[80px] font-playfair font-medium uppercase tracking-tighter mb-6 leading-[0.9] text-[var(--color-amethyst)]">
-                  {service.title}
+                <h1 className="text-5xl md:text-7xl lg:text-[80px] font-playfair font-medium uppercase tracking-tighter mb-6 leading-tight">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-br from-[var(--color-amethyst)] to-[#E0FF5F] inline-block py-2 pr-6">{service.title}</span>
                 </h1>
                 
                 <h2 className="text-2xl md:text-4xl font-playfair italic text-[var(--color-amethyst)]/60 mb-10 leading-tight">
@@ -90,7 +93,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   <ul className="space-y-5">
                     {service.includes.map((item, idx) => (
                       <li key={idx} className="flex items-start gap-4 group">
-                        <CheckCircle2 className="w-6 h-6 text-[var(--color-amethyst)] shrink-0 mt-0.5 group-hover:scale-110 transition-transform" />
+                        <CheckCircle2 className="w-6 h-6 text-accent2 shrink-0 mt-0.5 group-hover:scale-110 group-hover:text-accent1 transition-all duration-300" />
                         <span className="text-lg text-[var(--color-amethyst)]/80 group-hover:text-[var(--color-amethyst)] transition-colors">{item}</span>
                       </li>
                     ))}
@@ -140,12 +143,12 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
                 
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-white/10 rounded-2xl flex items-center justify-center mb-8 backdrop-blur-md">
-                     <Icons.Rocket className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 bg-gradient-to-br from-accent2 to-accent1 rounded-2xl flex items-center justify-center mb-8 shadow-lg relative overflow-hidden group-hover:scale-105 transition-transform duration-500">
+                     <Icons.Rocket className="w-8 h-8 text-white relative z-10" />
                   </div>
                   
-                  <h3 className="text-4xl font-playfair font-medium uppercase tracking-tighter mb-6 leading-tight">
-                    Ready to <br/><span className="italic text-white/60 capitalize">Dominate?</span>
+                  <h3 className="text-4xl font-playfair font-medium uppercase tracking-tighter mb-6 leading-tight text-white">
+                    <span className="text-[#E0FF5F]">Ready to</span> <br/><span className="italic capitalize">Dominate?</span>
                   </h3>
                   
                   <p className="text-white/80 mb-10 font-light leading-relaxed text-lg">
@@ -154,7 +157,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   
                   <Link 
                     href="/contact" 
-                    className="w-full py-5 bg-white text-[var(--color-amethyst)] font-inter font-bold uppercase tracking-widest text-sm rounded-xl hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3"
+                    className="w-full py-5 bg-accent2 text-[var(--color-amethyst)] font-inter font-bold uppercase tracking-widest text-sm rounded-xl hover:shadow-[0_0_30px_rgba(var(--color-accent2-rgb),0.5)] hover:bg-white hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3"
                   >
                     Book Discovery Call
                     <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

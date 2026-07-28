@@ -77,8 +77,8 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} Chaos Digital. All rights reserved.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-[var(--color-ivory)]/50 hover:text-[var(--color-ivory)] text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-[var(--color-ivory)]/50 hover:text-[var(--color-ivory)] text-sm transition-colors">Terms of Service</a>
+            <Link href="/privacy" className="text-[var(--color-ivory)]/50 hover:text-[var(--color-ivory)] text-sm transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="text-[var(--color-ivory)]/50 hover:text-[var(--color-ivory)] text-sm transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>
