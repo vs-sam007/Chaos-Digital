@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import PricingSection from "@/components/PricingSection";
 import { Check, X } from "lucide-react";
 import Link from "next/link";
 import MagneticButton from "@/components/MagneticButton";
@@ -67,8 +68,10 @@ export default function PricingPage() {
     <main className="bg-[var(--color-ivory)] min-h-screen text-void font-inter selection:bg-void/20 selection:text-[var(--color-ivory)]">
       <Navigation />
       
-      <div className="pt-32 pb-16 md:pt-48 md:pb-32 px-6">
-        <div className="container mx-auto">
+      <div className="pt-24 pb-16 md:pt-36 md:pb-32 px-6">
+        <PricingSection />
+        
+        <div className="container mx-auto" id="comparison">
           
           <div className="text-center max-w-4xl mx-auto mb-20">
             <h1 className="text-5xl md:text-8xl font-playfair font-medium uppercase tracking-tighter mb-6 leading-none">

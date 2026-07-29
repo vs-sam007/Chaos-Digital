@@ -50,7 +50,7 @@ export default function Portfolio() {
       <div className="container mx-auto px-6">
         <div className="mb-24 text-center">
           <h2 className="text-4xl md:text-6xl lg:text-8xl font-playfair font-bold text-void uppercase tracking-tighter">
-            SELECTED <span className="text-transparent" style={{ WebkitTextStroke: "1px var(--color-void)" }}>ARCHIVES</span>
+            SELECTED <span className="text-transparent" style={{ WebkitTextStroke: "1px var(--color-void)" }}>WORKS</span>
           </h2>
           <p className="mt-4 text-void/60 text-lg max-w-xl mx-auto uppercase tracking-widest font-semibold">
             A SHOWCASE OF EXCELLENCE

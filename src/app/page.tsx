@@ -6,7 +6,6 @@ import CurvedCarousel from "@/components/CurvedCarousel";
 import Process from "@/components/Process";
 import Services from "@/components/Services";
 import StatsReveal from "@/components/StatsReveal";
-import PricingSection from "@/components/PricingSection";
 import TextMarquee from "@/components/TextMarquee";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
@@ -23,7 +22,6 @@ export default function Home() {
       <Process />
       <Services />
       <StatsReveal />
-      <PricingSection />
       <TextMarquee />
       <Testimonials />
       <Contact />

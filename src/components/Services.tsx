@@ -67,7 +67,7 @@ export default function Services() {
               viewport={{ once: true, margin: "-100px" }}
               className="text-6xl md:text-8xl text-[var(--color-amethyst)] uppercase tracking-tighter font-playfair"
             >
-              OUR <span className="text-transparent" style={{ WebkitTextStroke: "1px var(--color-amethyst)" }}>ARSENAL</span>
+              OUR <span className="text-transparent" style={{ WebkitTextStroke: "1px var(--color-amethyst)" }}>KEY SERVICES</span>
             </motion.h2>
           </div>
           <motion.p 
