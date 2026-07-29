@@ -59,8 +59,8 @@ export default function Footer() {
             </h4>
             <ul className="flex flex-col gap-3">
               <li>
-                <a href="mailto:hello@chaosdigital.in" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">
-                  hello@chaosdigital.in
+                <a href="mailto:info.chaosdigital@gmail.com" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">
+                  info.chaosdigital@gmail.com
                 </a>
               </li>
               <li>
