@@ -4,40 +4,47 @@ import { motion } from "framer-motion";
 import TiltCard from "./TiltCard";
 import { Code2, Search, TrendingUp, Share2, Paintbrush, Bot } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const services = [
   {
     title: "Web & E-Commerce",
+    slug: "website-development",
     icon: <Code2 className="w-8 h-8 text-white/70" />,
     description: "Custom websites and high-converting Shopify stores built to drive revenue from day one.",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800",
   },
   {
     title: "Performance Marketing",
+    slug: "performance-marketing",
     icon: <TrendingUp className="w-8 h-8 text-white/70" />,
     description: "Data-in, revenue-out. Laser-focused campaigns across Google and Meta optimized for ROI.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
   },
   {
     title: "SEO & Content",
+    slug: "seo-search-engine-optimisation",
     icon: <Search className="w-8 h-8 text-white/70" />,
     description: "Long-term organic growth engines. We rank you higher and craft stories that stick.",
     image: "https://images.unsplash.com/photo-1432821596592-e2c18b78144f?q=80&w=800",
   },
   {
     title: "Social & Influencers",
+    slug: "social-media-marketing",
     icon: <Share2 className="w-8 h-8 text-white/70" />,
     description: "Build an audience that trusts and buys. End-to-end management and creator collaborations.",
     image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800",
   },
   {
     title: "AI & Automations",
+    slug: "ai-automations",
     icon: <Bot className="w-8 h-8 text-white/70" />,
     description: "Work smarter. We deploy 24/7 AI chatbots, CRM workflows, and WhatsApp automations.",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800",
   },
   {
     title: "Creative & Branding",
+    slug: "graphic-designing",
     icon: <Paintbrush className="w-8 h-8 text-white/70" />,
     description: "Scroll-stopping visuals. From brand identity kits to high-impact short-form video editing.",
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=800",
@@ -83,33 +90,35 @@ export default function Services() {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
             >
-              <TiltCard className="h-[450px] w-full !p-0 overflow-hidden group shadow-xl rounded-3xl border border-white/30 relative flex flex-col justify-end">
-                {/* Full Card Background Image */}
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 z-0"
-                />
-                
-                {/* Premium Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-void)]/95 via-[var(--color-void)]/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500 z-10" />
+              <Link href={`/services/${service.slug}`} className="block h-full group">
+                <TiltCard className="h-[450px] w-full !p-0 overflow-hidden shadow-xl rounded-3xl border border-white/30 relative flex flex-col justify-end">
+                  {/* Full Card Background Image */}
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-700 z-0"
+                  />
+                  
+                  {/* Premium Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-void)]/95 via-[var(--color-void)]/40 to-transparent opacity-90 group-hover:opacity-70 transition-opacity duration-500 z-10" />
 
-                {/* Content Reveal */}
-                <div className="relative z-20 p-8 transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col">
-                  <div className="mb-6 bg-white/10 backdrop-blur-md w-14 h-14 flex items-center justify-center rounded-2xl border border-white/20 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                    {service.icon}
+                  {/* Content Reveal */}
+                  <div className="relative z-20 p-8 transform translate-y-12 group-hover:translate-y-0 transition-transform duration-500 ease-out flex flex-col">
+                    <div className="mb-6 bg-white/10 backdrop-blur-md w-14 h-14 flex items-center justify-center rounded-2xl border border-white/20 shadow-lg group-hover:scale-110 transition-transform duration-500">
+                      {service.icon}
+                    </div>
+                    
+                    <h3 className="text-3xl text-[var(--color-ivory)] font-playfair font-bold uppercase tracking-wide mb-3 drop-shadow-md">
+                      {service.title}
+                    </h3>
+                    
+                    <p className="text-[var(--color-ivory)]/80 font-inter text-base leading-relaxed drop-shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                      {service.description}
+                    </p>
                   </div>
-                  
-                  <h3 className="text-3xl text-[var(--color-ivory)] font-playfair font-bold uppercase tracking-wide mb-3 drop-shadow-md">
-                    {service.title}
-                  </h3>
-                  
-                  <p className="text-[var(--color-ivory)]/80 font-inter text-base leading-relaxed drop-shadow-sm opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
-                    {service.description}
-                  </p>
-                </div>
-              </TiltCard>
+                </TiltCard>
+              </Link>
             </motion.div>
           ))}
         </div>
