@@ -26,7 +26,7 @@ export default function CurvedCarousel() {
     gsap.fromTo(wheelRef.current, 
       { rotation: 0 },
       {
-        rotation: 180,
+        rotation: 270,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -41,7 +41,7 @@ export default function CurvedCarousel() {
     gsap.fromTo(".carousel-card", 
       { rotation: 0 },
       {
-        rotation: -180,
+        rotation: -270,
         ease: "none",
         scrollTrigger: {
           trigger: containerRef.current,
@@ -54,7 +54,7 @@ export default function CurvedCarousel() {
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative h-[150vh] bg-[var(--color-amethyst)] overflow-hidden flex flex-col items-center">
+    <section ref={containerRef} className="relative h-[250vh] bg-[var(--color-amethyst)] overflow-hidden flex flex-col items-center">
       
       <div className="pt-32 text-center relative z-10">
         <h2 className="text-4xl md:text-6xl font-playfair font-medium text-[var(--color-ivory)] mb-4 uppercase">
@@ -73,8 +73,8 @@ export default function CurvedCarousel() {
           
           {projects.map((project, index) => {
             // Cards are positioned like a train coming from the left
-            // Item 0 is at -50deg (visible on left), subsequent items are further negative (hidden below horizon)
-            const angle = -50 - (25 * index); 
+            // Spaced out by 35 degrees so they don't overlap on mobile
+            const angle = -35 - (35 * index); 
             
             return (
               <div 
@@ -88,7 +88,7 @@ export default function CurvedCarousel() {
                 <div className="-translate-x-1/2 -translate-y-[120vw] md:-translate-y-[60vw]">
                   <div style={{ transform: `rotate(${-angle}deg)` }}>
                     {/* The Card itself (counter-rotates via GSAP) */}
-                    <div className="carousel-card relative group w-[260px] h-[500px] md:w-[380px] md:h-[700px] pointer-events-auto cursor-pointer hype-card p-2">
+                    <div className="carousel-card relative group w-[220px] h-[440px] sm:w-[260px] sm:h-[500px] md:w-[380px] md:h-[700px] pointer-events-auto cursor-pointer hype-card p-2">
                       <div className="w-full h-full rounded-[1.2rem] overflow-hidden relative transition-all duration-500 group-hover:scale-[1.02] group-hover:z-50 bg-black/5">
                         <Image
                           src={project.src}
