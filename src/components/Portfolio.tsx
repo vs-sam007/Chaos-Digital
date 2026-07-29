@@ -10,12 +10,12 @@ import Image from "next/image";
 gsap.registerPlugin(ScrollTrigger);
 
 const projects = [
-  { client: "Flipkart Commerce", metric: "+340% Conversions in 60 days", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800" },
-  { client: "Zomato Plus", metric: "₹2.4Cr Generated from Paid Social", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800" },
-  { client: "HDFC Digital", metric: "1M+ Organic Monthly Visitors", image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800" },
-  { client: "Cult.fit", metric: "Complete Rebrand & App Launch", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800" },
-  { client: "Swiggy Instamart", metric: "Performance Marketing Scale", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800" },
-  { client: "Nykaa Man", metric: "Social Growth Strategy", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800" },
+  { client: "D2C E-Commerce Scale", metric: "+340% Conversions in 60 days", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800" },
+  { client: "Client Growth via Instagram", metric: "₹2.4Cr Generated from Paid Social", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800" },
+  { client: "Fintech Platform SEO", metric: "1M+ Organic Monthly Visitors", image: "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=800" },
+  { client: "Health & Wellness Rebrand", metric: "Complete Rebrand & App Launch", image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800" },
+  { client: "FMCG Performance Push", metric: "Performance Marketing Scale", image: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=800" },
+  { client: "Premium Grooming Brand", metric: "Social Growth Strategy", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800" },
 ];
 
 export default function Portfolio() {
@@ -49,11 +49,11 @@ export default function Portfolio() {
     <section id="work" ref={containerRef} className="relative py-32 bg-offwhite portfolio-grid-section">
       <div className="container mx-auto px-6">
         <div className="mb-24 text-center">
-          <h2 className="text-4xl md:text-6xl font-outfit font-bold text-void uppercase tracking-tighter">
-            Proof of <span className="text-lime">Gravity</span>
+          <h2 className="text-4xl md:text-6xl lg:text-8xl font-playfair font-bold text-void uppercase tracking-tighter">
+            SELECTED <span className="text-transparent" style={{ WebkitTextStroke: "1px var(--color-void)" }}>ARCHIVES</span>
           </h2>
-          <p className="mt-4 text-void/60 text-lg max-w-xl mx-auto">
-            We don't deal in vanity metrics. We deal in measurable, undeniable impact.
+          <p className="mt-4 text-void/60 text-lg max-w-xl mx-auto uppercase tracking-widest font-semibold">
+            A SHOWCASE OF EXCELLENCE
           </p>
         </div>
 
