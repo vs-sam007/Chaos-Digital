@@ -139,27 +139,27 @@ export default function Hero() {
           <div ref={cardsRef} className="absolute inset-0 pointer-events-none">
             
             {/* Card 1: Leads */}
-            <div className="absolute top-[5%] left-[-5%] lg:left-[0%] px-5 py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col pointer-events-auto transition-transform hover:scale-105">
-              <span className="text-sm font-semibold text-[#111]">Leads Gen</span>
-              <span className="text-2xl font-bold text-[#6C5CE7]">+247</span>
+            <div className="absolute top-[5%] left-[2%] lg:left-[0%] px-4 lg:px-5 py-2 lg:py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col pointer-events-auto transition-transform hover:scale-105">
+              <span className="text-xs lg:text-sm font-semibold text-[#111]">Leads Gen</span>
+              <span className="text-xl lg:text-2xl font-bold text-[#6C5CE7]">+247</span>
             </div>
             
             {/* Card 2: SEO */}
-            <div className="absolute top-[15%] right-[-10%] lg:right-[-5%] px-5 py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col pointer-events-auto transition-transform hover:scale-105">
-              <span className="text-sm font-semibold text-[#111]">SEO Score</span>
-              <span className="text-2xl font-bold text-[#8B5CF6]">98/100</span>
+            <div className="absolute top-[15%] right-[2%] lg:right-[-5%] px-4 lg:px-5 py-2 lg:py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col pointer-events-auto transition-transform hover:scale-105">
+              <span className="text-xs lg:text-sm font-semibold text-[#111]">SEO Score</span>
+              <span className="text-xl lg:text-2xl font-bold text-[#8B5CF6]">98/100</span>
             </div>
 
             {/* Card 3: Growth */}
-            <div className="absolute bottom-[15%] left-[-5%] lg:left-[5%] px-5 py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col pointer-events-auto transition-transform hover:scale-105">
-              <span className="text-sm font-semibold text-[#111]">Growth</span>
-              <span className="text-2xl font-bold text-[#6C5CE7]">+312%</span>
+            <div className="absolute bottom-[20%] left-[2%] lg:left-[5%] px-4 lg:px-5 py-2 lg:py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col pointer-events-auto transition-transform hover:scale-105">
+              <span className="text-xs lg:text-sm font-semibold text-[#111]">Growth</span>
+              <span className="text-xl lg:text-2xl font-bold text-[#6C5CE7]">+312%</span>
             </div>
             
             {/* Card 4: Performance */}
-            <div className="absolute bottom-[5%] right-[-5%] lg:right-[5%] px-5 py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col pointer-events-auto transition-transform hover:scale-105">
-              <span className="text-sm font-semibold text-[#111]">Performance</span>
-              <span className="text-2xl font-bold text-[#8B5CF6]">99%</span>
+            <div className="absolute bottom-[10%] right-[2%] lg:right-[5%] px-4 lg:px-5 py-2 lg:py-3 rounded-2xl bg-white/70 backdrop-blur-xl border border-white/20 shadow-[0_8px_30px_rgb(0,0,0,0.04)] flex flex-col pointer-events-auto transition-transform hover:scale-105">
+              <span className="text-xs lg:text-sm font-semibold text-[#111]">Performance</span>
+              <span className="text-xl lg:text-2xl font-bold text-[#8B5CF6]">99%</span>
             </div>
 
           </div>

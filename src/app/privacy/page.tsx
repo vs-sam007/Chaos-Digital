@@ -64,7 +64,7 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-2xl font-playfair font-medium uppercase tracking-tighter mb-4 text-[var(--color-amethyst)]">6. Contact Us</h2>
               <p>If you have any questions about this privacy policy or our privacy practices, please contact us at:</p>
-              <p className="mt-2 font-medium">Email: hello@chaosdigital.in</p>
+              <p className="mt-2 font-medium">Email: info.chaosdigital@gmail.com</p>
             </section>
           </div>
         </div>

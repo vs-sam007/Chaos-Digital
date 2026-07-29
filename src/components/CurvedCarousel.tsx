@@ -22,79 +22,74 @@ export default function CurvedCarousel() {
   const wheelRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    // Rotate the massive wheel on scroll from 0 to 180 degrees
-    gsap.fromTo(wheelRef.current, 
-      { rotation: 0 },
-      {
-        rotation: 180,
-        ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-        },
+    // Create a master timeline for the pinned scroll animation
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: "+=200%", // The user will scroll for 2x the window height while the section is pinned
+        scrub: 1,
+        pin: true,
       }
-    );
+    });
 
+    // Rotate the massive wheel
+    tl.to(wheelRef.current,      {
+        rotation: 140,
+        ease: "none", }, 0);
+    
     // Counter-rotate the individual cards so they stay upright
-    gsap.fromTo(".carousel-card", 
-      { rotation: 0 },
-      {
-        rotation: -180,
-        ease: "none",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 1,
-        },
-      }
-    );
+    tl.to(".carousel-card",      {
+        rotation: -140,
+        ease: "none", }, 0);
+
   }, { scope: containerRef });
 
   return (
-    <section ref={containerRef} className="relative h-[150vh] bg-[var(--color-amethyst)] overflow-hidden flex flex-col items-center">
+    <section ref={containerRef} className="relative h-[100vh] bg-transparent flex flex-col pt-16">
       
-      <div className="pt-32 text-center relative z-10">
-        <h2 className="text-4xl md:text-6xl font-playfair font-medium text-[var(--color-ivory)] mb-4 uppercase">
+      <div className="flex-none text-center relative z-10 mb-8 md:mb-12">
+        <h2 className="text-4xl md:text-6xl font-playfair font-medium text-[var(--color-amethyst)] mb-4 uppercase">
           Selected Archives
         </h2>
-        <p className="text-[var(--color-ivory)]/60 font-inter uppercase tracking-widest text-sm">
+        <p className="text-[var(--color-amethyst)]/60 font-inter uppercase tracking-widest text-sm">
           A showcase of excellence
         </p>
       </div>
 
-      {/* Massive Ferris Wheel Container */}
-      <div className="absolute top-[30vh] left-1/2 -translate-x-1/2 w-[300vw] h-[300vw] md:w-[150vw] md:h-[150vw] rounded-full border border-[var(--color-ivory)]/10" style={{ pointerEvents: 'none' }}>
+      <div className="flex-1 relative bg-[var(--color-amethyst)] overflow-hidden rounded-t-[2.5rem] md:rounded-t-[4rem]">
+        {/* Massive Ferris Wheel Container */}
+        <div className="absolute top-[110vh] md:top-[160vh] left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300vw] h-[300vw] md:w-[140vw] md:h-[140vw] rounded-full border border-[var(--color-ivory)]/10" style={{ pointerEvents: 'none' }}>
         
         {/* Rotating Wrapper */}
         <div ref={wheelRef} className="absolute inset-0 origin-center">
           
           {projects.map((project, index) => {
-            // Cards are positioned like a train coming from the left
-            // Item 0 is at -50deg (visible on left), subsequent items are further negative (hidden below horizon)
-            const angle = -50 - (25 * index); 
-            const radius = 50; // percentage of wrapper
+            // Cards are tightly grouped on the top-left of the wheel at start
+            const angle = -15 - (22 * index); 
             
             return (
               <div 
                 key={project.id}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                className="absolute top-1/2 left-1/2"
                 style={{
-                  transform: `rotate(${angle}deg) translateY(-${radius}vw) rotate(${-angle}deg)`,
-                  transformOrigin: "center center"
+                  transform: `rotate(${angle}deg)`,
+                  transformOrigin: "0 0"
                 }}
               >
-                {/* The Card itself (counter-rotates via GSAP) */}
-                <div className="carousel-card relative group w-[280px] h-[550px] md:w-[380px] md:h-[700px] pointer-events-auto cursor-pointer hype-card p-2">
-                  <div className="w-full h-full rounded-[1.2rem] overflow-hidden relative transition-all duration-500 group-hover:scale-[1.02] group-hover:z-50 bg-black/5">
-                    <Image
-                      src={project.src}
-                      alt={project.title}
-                      fill
-                      className="object-contain md:object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
+                <div className="-translate-x-1/2 -translate-y-[150vw] md:-translate-y-[70vw]">
+                  <div style={{ transform: `rotate(${-angle}deg)` }}>
+                    {/* The Card itself (counter-rotates via GSAP) */}
+                    <div className="carousel-card relative group w-[220px] h-[440px] sm:w-[260px] sm:h-[500px] md:w-[380px] md:h-[700px] pointer-events-auto cursor-pointer hype-card p-2">
+                      <div className="w-full h-full rounded-[1.2rem] overflow-hidden relative transition-all duration-500 group-hover:scale-[1.02] group-hover:z-50 bg-black/5">
+                        <Image
+                          src={project.src}
+                          alt={project.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -102,6 +97,7 @@ export default function CurvedCarousel() {
           })}
 
         </div>
+      </div>
       </div>
     </section>
   );

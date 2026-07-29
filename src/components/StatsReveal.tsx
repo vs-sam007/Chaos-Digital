@@ -9,10 +9,10 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const photos = [
-  { id: 1, src: "/10.jpeg", rotation: -5, yOffset: 0, aspect: "aspect-[3/4] md:aspect-[9/16]", maxWidth: "max-w-[350px] md:max-w-[450px]" },
-  { id: 2, src: "/9.png", rotation: 5, yOffset: 50, aspect: "aspect-video", maxWidth: "max-w-[600px] md:max-w-[850px]" },
-  { id: 3, src: "/8.png", rotation: -3, yOffset: 100, aspect: "aspect-video", maxWidth: "max-w-[600px] md:max-w-[850px]" },
-  { id: 4, src: "/7.png", rotation: 6, yOffset: 150, aspect: "aspect-video", maxWidth: "max-w-[600px] md:max-w-[850px]" },
+  { id: 1, src: "/10.jpeg", rotation: -5, yOffset: 0, aspect: "aspect-[3/4] md:aspect-[9/16]", maxWidth: "max-w-[280px] md:max-w-[450px]" },
+  { id: 2, src: "/9.png", rotation: 5, yOffset: 50, aspect: "aspect-video", maxWidth: "max-w-[320px] md:max-w-[850px]" },
+  { id: 3, src: "/8.png", rotation: -3, yOffset: 100, aspect: "aspect-video", maxWidth: "max-w-[320px] md:max-w-[850px]" },
+  { id: 4, src: "/7.png", rotation: 6, yOffset: 150, aspect: "aspect-video", maxWidth: "max-w-[320px] md:max-w-[850px]" },
 ];
 
 const statsContent = [
@@ -134,7 +134,7 @@ export default function StatsReveal() {
           <div ref={rightTextRef} className="w-full max-w-lg mx-auto relative h-[400px]">
             {statsContent.map((stat, i) => (
               <div key={i} className="stat-text absolute inset-0 flex flex-col justify-center">
-                <h2 className="text-6xl md:text-8xl lg:text-[110px] font-playfair font-medium leading-[0.9] text-[var(--color-amethyst)] uppercase tracking-tight drop-shadow-sm">
+                <h2 className="text-[3.5rem] md:text-8xl lg:text-[110px] font-playfair font-medium leading-[0.9] text-[var(--color-amethyst)] uppercase tracking-tight drop-shadow-sm">
                   {stat.num} <br />
                   <span className="text-transparent" style={{ WebkitTextStroke: "2px var(--color-amethyst)" }}>{stat.outline}</span><br />
                   {stat.solid}
