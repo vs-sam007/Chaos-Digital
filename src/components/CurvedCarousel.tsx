@@ -75,26 +75,30 @@ export default function CurvedCarousel() {
             // Cards are positioned like a train coming from the left
             // Item 0 is at -50deg (visible on left), subsequent items are further negative (hidden below horizon)
             const angle = -50 - (25 * index); 
-            const radius = 50; // percentage of wrapper
             
             return (
               <div 
                 key={project.id}
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                className="absolute top-1/2 left-1/2"
                 style={{
-                  transform: `rotate(${angle}deg) translateY(-${radius}vw) rotate(${-angle}deg)`,
-                  transformOrigin: "center center"
+                  transform: `rotate(${angle}deg)`,
+                  transformOrigin: "0 0"
                 }}
               >
-                {/* The Card itself (counter-rotates via GSAP) */}
-                <div className="carousel-card relative group w-[280px] h-[550px] md:w-[380px] md:h-[700px] pointer-events-auto cursor-pointer hype-card p-2">
-                  <div className="w-full h-full rounded-[1.2rem] overflow-hidden relative transition-all duration-500 group-hover:scale-[1.02] group-hover:z-50 bg-black/5">
-                    <Image
-                      src={project.src}
-                      alt={project.title}
-                      fill
-                      className="object-contain md:object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
+                <div className="-translate-x-1/2 -translate-y-[120vw] md:-translate-y-[60vw]">
+                  {/* The Card itself (counter-rotates via GSAP) */}
+                  <div 
+                    className="carousel-card relative group w-[260px] h-[500px] md:w-[380px] md:h-[700px] pointer-events-auto cursor-pointer hype-card p-2"
+                    style={{ transform: `rotate(${-angle}deg)` }}
+                  >
+                    <div className="w-full h-full rounded-[1.2rem] overflow-hidden relative transition-all duration-500 group-hover:scale-[1.02] group-hover:z-50 bg-black/5">
+                      <Image
+                        src={project.src}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
