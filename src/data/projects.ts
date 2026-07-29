@@ -107,7 +107,7 @@ export const projects: Project[] = [
     imagePreview: "/projects/real-estate-premium.png",
     imageDesktop: "/projects/real-estate-premium.png",
     imageMobile: "/projects/real-estate-premium.png",
-    isFeatured: true,
+    isFeatured: false,
     liveUrl: "https://real-estate-premium-nine.vercel.app/"
   },
   {

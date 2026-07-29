@@ -165,19 +165,6 @@ export default function FeaturedProject() {
                   ))}
                 </div>
 
-                {/* Metrics Highlight Grid */}
-                <div className="grid grid-cols-2 gap-4 p-5 rounded-2xl bg-white/60 border border-[var(--color-amethyst)]/10 backdrop-blur-md mb-8">
-                  {featured.metrics.map((metric) => (
-                    <div key={metric.label} className="flex flex-col">
-                      <span className="text-2xl md:text-3xl font-playfair font-bold text-[var(--color-amethyst)]">
-                        {metric.value}
-                      </span>
-                      <span className="text-[11px] uppercase tracking-wider font-inter text-[var(--color-amethyst)]/60 mt-0.5">
-                        {metric.label}
-                      </span>
-                    </div>
-                  ))}
-                </div>
 
                 {/* Key Technologies */}
                 <div className="flex items-center gap-2 flex-wrap mb-10">

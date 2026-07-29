@@ -95,22 +95,6 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </div>
         </div>
 
-        {/* Outcomes & Metrics Grid */}
-        <div className="mb-6 p-4 md:p-5 rounded-2xl bg-white/70 border border-[var(--color-amethyst)]/10 backdrop-blur-md">
-          <h4 className="text-[11px] font-inter uppercase tracking-widest text-[var(--color-amethyst)]/50 font-bold mb-3">Key Highlights</h4>
-          <div className="grid grid-cols-2 gap-3">
-            {project.metrics.slice(0, 4).map((metric) => (
-              <div key={metric.label} className="flex flex-col">
-                <span className="text-xl md:text-2xl font-playfair font-bold text-[var(--color-amethyst)]">
-                  {metric.value}
-                </span>
-                <span className="text-[10px] uppercase tracking-wider font-inter text-[var(--color-amethyst)]/60">
-                  {metric.label}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
 
         {/* Technologies Badges */}
         <div className="flex flex-wrap gap-1.5 mb-8">
