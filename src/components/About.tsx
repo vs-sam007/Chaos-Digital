@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { AnimatedNumber } from "@/components/core/animated-number";
 
@@ -13,6 +14,7 @@ export default function About() {
     setExperts(40);
     setAwards(12);
   }, []);
+
   return (
     <section id="about" className="relative py-32 bg-transparent overflow-hidden border-t border-[var(--color-amethyst)]/10">
       <div className="container mx-auto px-6">
@@ -51,22 +53,45 @@ export default function About() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
-            className="relative w-full aspect-[4/3] overflow-hidden group p-2 hype-card"
+            className="w-full"
           >
-            <div className="relative w-full h-full rounded-[1rem] overflow-hidden">
-              <Image
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=800"
-                alt="Chaos Digital Team"
-                fill
-                className="object-cover transition-all duration-700 ease-out group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-[var(--color-amethyst)]/5 group-hover:bg-transparent transition-colors duration-500" />
-              <div className="absolute bottom-6 left-6 bg-[var(--color-ivory)] px-6 py-3 rounded-full shadow-lg translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                <span className="text-[var(--color-amethyst)] font-inter font-bold uppercase tracking-wider text-sm">
-                  HQ - Lucknow, Uttar Pradesh
-                </span>
+            <Link href="/contact" className="block group">
+              <div className="relative w-full rounded-[2.5rem] bg-[var(--color-amethyst)] p-8 sm:p-10 md:p-14 text-[var(--color-ivory)] shadow-2xl overflow-hidden transition-all duration-500 group-hover:scale-[1.02] border border-white/10 flex flex-col justify-between min-h-[440px]">
+                
+                {/* Background Ambient Glow */}
+                <div className="absolute top-0 right-0 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl pointer-events-none" />
+                
+                {/* Top-Right Circular Interactive Badge */}
+                <div className="absolute top-8 right-8 w-14 h-14 sm:w-16 sm:h-16 rounded-full border border-white/20 bg-white/5 backdrop-blur-md flex items-center justify-center group-hover:bg-white group-hover:text-[var(--color-amethyst)] transition-all duration-500 shadow-lg">
+                  <ArrowUpRight className="w-7 h-7 text-white group-hover:text-[var(--color-amethyst)] transition-colors duration-500" />
+                </div>
+
+                {/* Main Card Content */}
+                <div>
+                  <h3 className="text-3xl sm:text-4xl lg:text-5xl font-playfair font-medium uppercase tracking-tight leading-[1.05] mb-6 pr-16 text-white drop-shadow-md">
+                    CLAIM YOUR <br />
+                    FREE <br />
+                    30-MIN <br />
+                    STRATEGY CALL
+                  </h3>
+
+                  <p className="text-white/80 font-inter text-base sm:text-lg font-light leading-relaxed max-w-lg">
+                    Connect with our experts today for a zero-pressure consultation. We'll audit your current setup, uncover hidden growth opportunities, and build a custom roadmap for your success.
+                  </p>
+                </div>
+
+                {/* Bottom CTA bar */}
+                <div className="mt-8 pt-6 border-t border-white/15 flex items-center justify-between">
+                  <span className="text-xs uppercase font-inter tracking-[0.2em] text-white/60 font-semibold">
+                    100% Free • Zero Pressure
+                  </span>
+                  <span className="text-sm uppercase font-inter font-bold tracking-wider text-amber-300 group-hover:translate-x-1 transition-transform duration-300 flex items-center gap-1">
+                    Book Call Now &rarr;
+                  </span>
+                </div>
+
               </div>
-            </div>
+            </Link>
           </motion.div>
         </div>
       </div>

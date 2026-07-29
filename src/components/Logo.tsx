@@ -3,17 +3,18 @@ import Image from 'next/image';
 
 interface LogoProps {
   className?: string;
+  size?: number;
 }
 
-export function Logo({ className = "" }: LogoProps) {
+export function Logo({ className = "w-10 h-10 md:w-12 md:h-12", size = 60 }: LogoProps) {
   return (
-    <div className={`flex items-center justify-center select-none ${className}`}>
+    <div className={`relative flex items-center justify-center select-none shrink-0 ${className}`}>
       <Image 
         src="/logo-tech.png" 
         alt="Chaos Digital Logo" 
-        width={120} 
-        height={120} 
-        className="w-20 h-20 md:w-24 md:h-24 object-contain"
+        width={size} 
+        height={size} 
+        className="w-full h-full object-contain"
         priority
       />
     </div>

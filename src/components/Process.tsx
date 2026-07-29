@@ -57,9 +57,9 @@ export default function Process() {
         scrollTrigger: {
           trigger: containerRef.current,
           pin: true,
-          scrub: 1,
+          scrub: 0.3,
           start: "top top",
-          end: () => `+=${scrollRef.current!.scrollWidth}`,
+          end: () => `+=${scrollRef.current!.scrollWidth * 0.55}`,
           invalidateOnRefresh: true,
         }
       });
