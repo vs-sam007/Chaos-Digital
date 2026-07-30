@@ -16,7 +16,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Chaos Digital | Anti-Gravity Agency",
+  title: "Chaos Digital",
   description: "Websites that defy gravity. Premium digital marketing agency.",
 };
 

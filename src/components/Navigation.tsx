@@ -83,7 +83,7 @@ export default function Navigation() {
         className={`fixed top-0 inset-x-0 z-50 py-4 transition-colors duration-500 ${isMobileMenuOpen ? 'bg-[var(--color-ivory)]' : 'bg-transparent'}`}
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
-          <Link href="/" className="hover:opacity-80 transition-opacity flex items-center gap-2 relative z-50" onClick={() => setIsMobileMenuOpen(false)}>
+          <Link href="/" className="hover:opacity-80 transition-opacity flex items-center gap-1 relative z-50" onClick={() => setIsMobileMenuOpen(false)}>
             <Logo className="w-10 h-10 md:w-12 md:h-12" />
             <span className="font-playfair font-bold text-xl md:text-2xl text-[var(--color-amethyst)] leading-none tracking-tight">Chaos Digital</span>
           </Link>
