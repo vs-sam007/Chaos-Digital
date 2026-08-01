@@ -17,25 +17,25 @@ const stages = [
   {
     num: "01",
     title: "Discovery",
-    desc: "We dive deep into your universe. Understanding your brand, your enemies, and your goals.",
+    desc: "We learn about your business, target market, business goals, and main competitors.",
     image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800",
   },
   {
     num: "02",
     title: "Strategy",
-    desc: "Architecting the blueprint. We map out the user journey and conversion pathways.",
+    desc: "We map out your customer journey, lead generation channels, and growth strategy.",
     image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=800",
   },
   {
     num: "03",
     title: "Build",
-    desc: "The heavy lifting. We write the code, design the interfaces, and construct the engine.",
+    desc: "We design the visuals, develop your website, and set up your marketing systems.",
     image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=800",
   },
   {
     num: "04",
-    title: "Launch & Grow",
-    desc: "Ignition. We deploy, monitor, and aggressively scale your digital presence.",
+    title: "Launch & Scale",
+    desc: "We launch your campaigns, track live performance, and scale your leads and sales.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
   },
 ];
@@ -82,10 +82,10 @@ export default function Process() {
           {/* Header Title locked at start */}
           <div className="w-full md:w-[40vw] flex-shrink-0 flex flex-col justify-center">
             <h2 className="text-5xl md:text-8xl font-playfair font-medium text-[var(--color-amethyst)] uppercase tracking-tighter mb-6">
-              Our <span className="text-transparent" style={{ WebkitTextStroke: "2px var(--color-amethyst)" }}>Methodology</span>
+              Our <span className="text-transparent" style={{ WebkitTextStroke: "2px var(--color-amethyst)" }}>Process</span>
             </h2>
             <p className="text-xl text-[var(--color-amethyst)]/80 font-inter">
-              A systematic approach to defying digital gravity. No guesswork. Just precision engineering.
+              A clear, step-by-step approach to growing your business online. No guesswork, just real results.
             </p>
           </div>
 
@@ -127,7 +127,7 @@ export default function Process() {
           {/* Before & After section embedded at the end of the scroll */}
           <div className="w-full md:w-[60vw] flex-shrink-0 flex flex-col justify-center md:pl-16">
             <h3 className="text-3xl font-playfair font-medium text-[var(--color-amethyst)] uppercase tracking-tighter mb-8 text-center md:text-left">
-              Before & After <span className="text-transparent" style={{ WebkitTextStroke: "1px var(--color-amethyst)" }}>Excellence</span>
+              Before & After <span className="text-transparent" style={{ WebkitTextStroke: "1px var(--color-amethyst)" }}>Results</span>
             </h3>
             <div className="w-full">
               <ImageComparison

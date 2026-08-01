@@ -8,8 +8,6 @@ import MagneticButton from "./MagneticButton";
 const plans = [
   {
     name: "Grow Plan",
-    price: "₹7,999",
-    priceMax: "₹14,999",
     target: "Startups & Local MSMEs",
     features: [
       "Social Media Management (8-12 posts)",
@@ -23,8 +21,6 @@ const plans = [
   },
   {
     name: "Standard Plan",
-    price: "₹19,999",
-    priceMax: "₹34,999",
     target: "Growing D2C Brands & Scaling Startups",
     features: [
       "Social Media Management (20-25 posts)",
@@ -38,8 +34,6 @@ const plans = [
   },
   {
     name: "Premium Plan",
-    price: "₹49,999",
-    priceMax: "₹89,999",
     target: "Established Brands & Companies Ready to Dominate",
     features: [
       "Social Media Management (30+ posts)",
@@ -64,7 +58,7 @@ export default function PricingSection() {
             viewport={{ once: true, margin: "-100px" }}
             className="text-4xl md:text-6xl font-playfair font-medium text-[var(--color-amethyst)] uppercase tracking-tighter"
           >
-            Pricing Without <span className="text-transparent" style={{ WebkitTextStroke: "1px var(--color-amethyst)" }}>Chaos</span>
+            Growth Plans Without <span className="text-transparent" style={{ WebkitTextStroke: "1px var(--color-amethyst)" }}>Chaos</span>
           </motion.h2>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -73,7 +67,7 @@ export default function PricingSection() {
             transition={{ delay: 0.2 }}
             className="mt-4 text-[var(--color-amethyst)]/80 text-lg"
           >
-            Transparent, retainer-based growth systems. No hidden costs. Choose your trajectory.
+            Tailored, retainer-based growth systems built for your exact business goals. Choose your trajectory.
           </motion.p>
         </div>
 
@@ -100,10 +94,9 @@ export default function PricingSection() {
               </p>
               
               <div className="mb-8">
-                <span className="text-4xl md:text-5xl font-playfair font-medium text-[var(--color-amethyst)] tracking-tighter">
-                  {plan.price}
+                <span className="inline-block px-4 py-2 rounded-full bg-[var(--color-amethyst)]/5 border border-[var(--color-amethyst)]/15 text-xs font-bold uppercase tracking-wider text-[var(--color-amethyst)]">
+                  Custom Monthly Retainer
                 </span>
-                <span className="text-[var(--color-amethyst)]/60 font-inter"> to {plan.priceMax} /mo</span>
               </div>
               
               <div className="space-y-4 mb-10 font-inter">
@@ -115,8 +108,8 @@ export default function PricingSection() {
                 ))}
               </div>
               
-              <Link href="/pricing" className={`block w-full py-4 text-center font-inter font-bold uppercase tracking-wider rounded-xl transition-colors ${plan.highlighted ? 'bg-[var(--color-amethyst)] text-[var(--color-ivory)] hover:bg-[var(--color-amethyst)]/90' : 'bg-[var(--color-amethyst)]/10 text-[var(--color-amethyst)] hover:bg-[var(--color-amethyst)]/20'}`}>
-                Select Plan
+              <Link href="/contact" className={`block w-full py-4 text-center font-inter font-bold uppercase tracking-wider rounded-xl transition-colors ${plan.highlighted ? 'bg-[var(--color-amethyst)] text-[var(--color-ivory)] hover:bg-[var(--color-amethyst)]/90' : 'bg-[var(--color-amethyst)]/10 text-[var(--color-amethyst)] hover:bg-[var(--color-amethyst)]/20'}`}>
+                Request Proposal
               </Link>
             </motion.div>
           ))}
@@ -128,7 +121,7 @@ export default function PricingSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <p className="text-[var(--color-amethyst)]/60 mb-6 font-inter">Want to see the full breakdown or looking for one-time projects?</p>
+          <p className="text-[var(--color-amethyst)]/60 mb-6 font-inter">Want to see the full feature breakdown across all plans?</p>
           <Link href="/pricing">
             <MagneticButton className="bg-transparent border border-[var(--color-amethyst)]/30 text-[var(--color-amethyst)] px-8 py-4 rounded-full text-sm font-inter hover:bg-transparent hover:text-[var(--color-amethyst)] transition-colors uppercase font-bold tracking-wider mx-auto flex items-center gap-2">
               View Detailed Comparison

@@ -26,11 +26,11 @@ export default function About() {
             className="flex flex-col gap-6"
           >
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-playfair font-medium tracking-tighter text-[var(--color-amethyst)] leading-[1.1] uppercase">
-              ARCHITECTS OF <br />
-              <span className="text-transparent" style={{ WebkitTextStroke: "1px var(--color-amethyst)" }}>Excellence</span>
+              DRIVING REAL <br />
+              <span className="text-transparent" style={{ WebkitTextStroke: "1px var(--color-amethyst)" }}>Digital Growth</span>
             </h2>
             <p className="text-xl md:text-2xl text-[var(--color-amethyst)]/80 font-light max-w-lg font-inter">
-              We are a collective of engineers, designers, and strategists operating at the intersection of technology and art. We exist to build digital experiences that refuse to be ignored.
+              We are a full-service team of digital marketers, web developers, and designers based in Lucknow, serving clients across India. We build websites and campaigns that bring real growth to your business.
             </p>
             <div className="flex gap-4 mt-4">
               <div className="flex flex-col">
