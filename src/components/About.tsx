@@ -7,11 +7,11 @@ import { useEffect, useState } from "react";
 import { AnimatedNumber } from "@/components/core/animated-number";
 
 export default function About() {
-  const [experts, setExperts] = useState(0);
-  const [awards, setAwards] = useState(0);
+  const [experts, setExperts] = useState(25);
+  const [awards, setAwards] = useState(12);
 
   useEffect(() => {
-    setExperts(40);
+    setExperts(25);
     setAwards(12);
   }, []);
 

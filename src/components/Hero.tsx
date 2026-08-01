@@ -117,8 +117,8 @@ export default function Hero() {
               <p className="text-xs text-[var(--color-hero-text-secondary)] uppercase tracking-wider font-medium">Projects Delivered</p>
             </div>
             <div>
-              <p className="text-2xl font-bold text-[var(--color-hero-text-primary)] mb-1">35+</p>
-              <p className="text-xs text-[var(--color-hero-text-secondary)] uppercase tracking-wider font-medium">Happy Clients</p>
+              <p className="text-2xl font-bold text-[var(--color-hero-text-primary)] mb-1">25+</p>
+              <p className="text-xs text-[var(--color-hero-text-secondary)] uppercase tracking-wider font-medium">Experts</p>
             </div>
             <div>
               <p className="text-2xl font-bold text-[var(--color-hero-text-primary)] mb-1">98%</p>
