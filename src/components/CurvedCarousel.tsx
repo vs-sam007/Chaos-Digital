@@ -22,6 +22,8 @@ export default function CurvedCarousel() {
   const wheelRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
+    if (!containerRef.current || !wheelRef.current) return;
+
     // Animate the wheel naturally as the section scrolls through view (no pinning)
     const tl = gsap.timeline({
       scrollTrigger: {

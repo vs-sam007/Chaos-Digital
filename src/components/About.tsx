@@ -35,14 +35,14 @@ export default function About() {
             <div className="flex gap-4 mt-4">
               <div className="flex flex-col">
                 <div className="flex text-3xl font-playfair font-medium text-[var(--color-amethyst)]">
-                  <AnimatedNumber value={experts} springOptions={{ duration: 2000, bounce: 0 }} />+
+                  <AnimatedNumber value={25} startOnView={false} springOptions={{ duration: 1200, bounce: 0 }} />+
                 </div>
                 <span className="text-sm uppercase tracking-widest text-[var(--color-amethyst)]/60 font-inter">Experts</span>
               </div>
               <div className="w-px h-12 bg-[var(--color-amethyst)]/20 mx-4" />
               <div className="flex flex-col">
                 <div className="text-3xl font-playfair font-medium text-[var(--color-amethyst)]">
-                  <AnimatedNumber value={awards} springOptions={{ duration: 2000, bounce: 0 }} />
+                  <AnimatedNumber value={12} startOnView={false} springOptions={{ duration: 1200, bounce: 0 }} />
                 </div>
                 <span className="text-sm uppercase tracking-widest text-[var(--color-amethyst)]/60 font-inter">Awards</span>
               </div>

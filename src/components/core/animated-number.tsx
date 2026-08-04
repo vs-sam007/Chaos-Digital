@@ -1,8 +1,8 @@
 'use client';
 
 import { cn } from '@/lib/utils';
-import { motion, SpringOptions, useInView, useSpring, useTransform } from 'motion/react';
-import { useEffect, useMemo, useRef } from 'react';
+import { motion, SpringOptions, useInView, useSpring, useTransform } from 'framer-motion';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 export type AnimatedNumberProps = {
   value: number;
@@ -29,6 +29,11 @@ export function AnimatedNumber({
 }: AnimatedNumberProps) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const [formattedValue, setFormattedValue] = useState<string>(() => {
+    if (format) return format(from);
+    if (formatOptions || locale) return new Intl.NumberFormat(locale, formatOptions).format(from);
+    return Math.round(from).toLocaleString(locale);
+  });
 
   const Component = useMemo(() => {
     if (typeof as === 'string' && as in motion) {
@@ -50,6 +55,12 @@ export function AnimatedNumber({
   });
 
   useEffect(() => {
+    return display.on("change", (latest) => {
+      setFormattedValue(latest);
+    });
+  }, [display]);
+
+  useEffect(() => {
     if (!startOnView || isInView) {
       spring.set(value);
     }
@@ -61,7 +72,7 @@ export function AnimatedNumber({
       aria-label={value.toString()}
       className={cn('tabular-nums', className)}
     >
-      {display}
+      {formattedValue}
     </Component>
   );
 }

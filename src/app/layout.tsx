@@ -18,6 +18,14 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Chaos Digital",
   description: "Websites that defy gravity. Premium digital marketing agency.",
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico" },
+    ],
+    shortcut: "/icon.png",
+    apple: "/icon.png",
+  },
 };
 
 export default function RootLayout({

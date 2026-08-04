@@ -42,26 +42,26 @@ export default function Contact() {
             <p className="text-lg text-[var(--color-amethyst)]/80 font-inter max-w-md mb-8">
               Drop your details below. We'll audit your current presence and show you exactly how to defy gravity.
             </p>
-            
+
             <div className="relative overflow-hidden rounded-[2rem] bg-[var(--color-amethyst)] p-8 md:p-10 text-[var(--color-ivory)] shadow-2xl group w-full max-w-lg mb-8 md:mb-0">
               <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-accent1 to-transparent opacity-20 rounded-full blur-3xl -mr-20 -mt-20 transition-transform duration-700 group-hover:scale-110" />
-              
+
               <div className="flex justify-between items-start mb-8 relative z-10">
                 <h3 className="text-3xl md:text-4xl font-playfair font-bold uppercase leading-[1.1] max-w-[70%] text-[var(--color-ivory)] group-hover:text-accent2 transition-colors duration-300">
                   Claim Your Free <br /> 30-Min Strategy Call
                 </h3>
-                
+
                 <div className="w-16 h-16 flex items-center justify-center shrink-0">
                   <SpinningText radius={2.5} fontSize={0.7} className="font-outfit text-accent2 font-bold uppercase tracking-widest">
                     {`BOOK NOW • BOOK NOW • `}
                   </SpinningText>
                 </div>
               </div>
-              
+
               <p className="text-[var(--color-ivory)]/80 font-inter mb-10 max-w-[90%] relative z-10 text-sm md:text-base leading-relaxed">
                 Connect with our experts today for a zero-pressure consultation. We'll audit your current setup, uncover hidden growth opportunities, and build a custom roadmap for your success.
               </p>
-              
+
               <Link href="/contact" className="relative z-10 inline-flex items-center justify-center bg-accent2 text-[var(--color-amethyst)] px-8 py-3.5 rounded-full font-bold font-outfit uppercase tracking-widest hover:bg-[var(--color-ivory)] hover:scale-105 transition-all duration-300 shadow-[0_0_20px_rgba(var(--color-accent2),0.3)] hover:shadow-[0_0_30px_rgba(var(--color-ivory),0.5)]">
                 Secure Your Spot
               </Link>
@@ -118,7 +118,7 @@ export default function Contact() {
                         ) : submitted ? (
                           "TRANSMISSION SENT"
                         ) : (
-                          "INITIATE SEQUENCE"
+                          "SUBMIT"
                         )}
                       </span>
                     </Magnetic>

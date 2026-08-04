@@ -34,6 +34,7 @@ export default function Footer() {
               Navigation
             </h4>
             <ul className="flex flex-col gap-3">
+              <li><Link href="/projects" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Delivered Projects</Link></li>
               <li><Link href="/work" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Work</Link></li>
               <li><Link href="/services" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Services</Link></li>
               <li><Link href="/pricing" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Pricing</Link></li>

@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 import { Logo } from "./Logo";
 
 const navLinks = [
-  { name: "Index", href: "/" },
+  { name: "Home", href: "/" },
   { name: "Work", href: "/work" },
   { name: "Services", href: "/services" },
   { name: "Pricing", href: "/pricing" },
@@ -37,7 +37,7 @@ export default function Navigation() {
         setIsHidden(false);
         return;
       }
-      
+
       // Hide when scrolling down past 50px, show when at the top
       if (latest > 50) {
         setIsHidden(true);
@@ -103,7 +103,7 @@ export default function Navigation() {
           </nav>
 
           {/* Mobile Hamburger Button */}
-          <button 
+          <button
             className="md:hidden relative z-50 p-2 text-[var(--color-amethyst)] hover:opacity-70 transition-opacity"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle mobile menu"
@@ -147,8 +147,8 @@ export default function Navigation() {
                 </motion.div>
               ))}
             </nav>
-            
-            <motion.div 
+
+            <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}

@@ -74,7 +74,12 @@ export default async function ProjectDetailPage({ params }: PageProps) {
               {project.industry}
             </span>
 
-            {project.liveUrl ? (
+            {project.isUnderProduction ? (
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-800 text-xs font-inter font-semibold uppercase tracking-wider">
+                <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                Under Active Production
+              </span>
+            ) : project.liveUrl ? (
               <a
                 href={project.liveUrl}
                 target="_blank"
@@ -85,9 +90,9 @@ export default async function ProjectDetailPage({ params }: PageProps) {
                 Live Production Build ↗
               </a>
             ) : (
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-800 text-xs font-inter font-semibold uppercase tracking-wider">
-                <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-                Under Active Production
+              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-purple-900/15 border border-purple-900/30 text-purple-900 text-xs font-inter font-semibold uppercase tracking-wider">
+                <CheckCircle2 className="w-3.5 h-3.5 text-purple-700" />
+                Deployed Project
               </span>
             )}
           </div>

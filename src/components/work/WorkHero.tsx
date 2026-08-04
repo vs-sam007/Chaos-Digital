@@ -6,8 +6,9 @@ import { projects } from "@/data/projects";
 import { Sparkles, ShieldCheck, Zap, Layers } from "lucide-react";
 
 export default function WorkHero() {
-  const heroProjects = projects.slice(0, 3);
-  const totalProjects = projects.length;
+  const workProjects = projects.filter((p) => !p.instagramUrl);
+  const heroProjects = workProjects.slice(0, 3);
+  const totalProjects = workProjects.length;
 
   return (
     <section className="relative min-h-[90vh] flex items-center pb-24 pt-44 md:pt-48 overflow-hidden">

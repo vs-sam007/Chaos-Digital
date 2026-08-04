@@ -82,3 +82,22 @@ html.lenis, html.lenis body {
   box-shadow: 0 10px 40px rgba(43, 19, 90, 0.1);
   transform: translateY(-5px);
 }
+
+/* Animated Gradient Shimmer Utility */
+@keyframes text-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-text-shimmer {
+  background-size: 200% auto;
+  animation: text-shimmer 4s ease infinite;
+}
+

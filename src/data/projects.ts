@@ -34,6 +34,8 @@ export interface Project {
   galleryImages?: string[];
   isFeatured?: boolean;
   liveUrl?: string;
+  instagramUrl?: string;
+  isUnderProduction?: boolean;
 }
 
 export const projects: Project[] = [
@@ -41,6 +43,7 @@ export const projects: Project[] = [
     id: "proj-00",
     slug: "pandit-ji-mobile-app",
     title: "Pandit Ji Mobile App",
+    isUnderProduction: true,
     industry: "Spiritual Services & E-Commerce",
     shortDescription: "A comprehensive mobile application (currently under active production) connecting users with verified Pandits and astrologers for seamless booking of pujas, consultations, and ritual samagri.",
     services: ["Mobile App Development", "UI/UX Design", "Backend Architecture"],
@@ -312,5 +315,200 @@ export const projects: Project[] = [
     imageDesktop: "/projects/academy-sync.png",
     imageMobile: "/projects/academy-sync.png",
     isFeatured: false
+  },
+  {
+    id: "proj-08",
+    slug: "sunita-jewellers",
+    title: "Sunita Jewellers",
+    industry: "Luxury Jewellery & E-Commerce",
+    shortDescription: "A bespoke digital storefront and targeted Instagram growth campaign for a premier Delhi-based gold & bridal diamond jewellery brand.",
+    services: ["Web Development", "Instagram Growth", "Brand Strategy", "UI/UX Design"],
+    metrics: [
+      { label: "Web Traffic", value: "+280%" },
+      { label: "Social Engagement", value: "4.8x" },
+      { label: "Bridal Leads", value: "+190%" },
+      { label: "Location", value: "Delhi" }
+    ],
+    technologies: ["HTML5", "CSS3", "JavaScript", "Instagram Reels", "Meta Business"],
+    caseStudy: [
+      { step: "Challenge", title: "Showcase Heritage & Drive Foot Traffic", description: "The luxury brand needed a refined web portal and engaging Instagram presence to capture urban bridal jewelry shoppers." },
+      { step: "Design", title: "Royal & Elegant Aesthetic", description: "Crafted a rich gold-and-ivory digital presentation displaying exclusive bridal necklaces, bangles, and diamond collections." },
+      { step: "Growth", title: "Instagram Reel Curation", description: "Launched viral reel campaigns highlighting handcrafted artistry and in-store customer experiences." },
+      { step: "Results", title: "Surge in Bridal Inquiries", description: "Boosted digital traffic by 280% and generated a 190% increase in high-ticket bridal consultations." }
+    ],
+    clientInfo: {
+      clientName: "Sunita Jewellers",
+      duration: "Ongoing Partnership",
+      teamSize: "3 Experts",
+      problem: "A premier Delhi jewellery establishment sought to modernize its digital presence, showcase authentic diamond and gold bridal collections, and scale engagement on Instagram to reach modern brides and luxury buyers.",
+      solution: "We engineered an elegant web platform showcasing authentic bridal collections, coupled with an Instagram growth campaign featuring high-definition reel showcases, local targeted ad funnels, and direct WhatsApp appointment routing."
+    },
+    imagePreview: "/projects/sunita-jewellers.png",
+    imageDesktop: "/projects/sunita-jewellers.png",
+    imageMobile: "/projects/sunita-jewellers.png",
+    liveUrl: "http://www.sunitajewellers.com",
+    instagramUrl: "https://www.instagram.com/sunita.jewellers"
+  },
+  {
+    id: "proj-09",
+    slug: "vigoron-sports-nutrition",
+    title: "Vigoron (Anytime Sports)",
+    industry: "Sports Nutrition & Fitness E-Commerce",
+    shortDescription: "A high-performance Next.js e-commerce store and social growth engine for authentic sports nutrition supplements across India.",
+    services: ["E-Commerce Development", "Instagram Growth", "Razorpay Checkout", "Performance Marketing"],
+    metrics: [
+      { label: "Online Sales", value: "+310%" },
+      { label: "Checkout Speed", value: "Sub-200ms" },
+      { label: "Social Reach", value: "500k+" },
+      { label: "Delivery", value: "4 Weeks" }
+    ],
+    technologies: ["Next.js", "React", "Node.js", "Razorpay", "Instagram Suite"],
+    caseStudy: [
+      { step: "Challenge", title: "E-Commerce Friction & Trust", description: "Needed a lightning-fast online supplement store with seamless checkout and an active fitness community on Instagram." },
+      { step: "Development", title: "Next.js & Razorpay Integration", description: "Engineered a responsive supplement shop with 1-click Razorpay payment and instant product filtering." },
+      { step: "Growth", title: "Fitness Influencer Marketing", description: "Executed Instagram reel series and athlete testimonials driving direct traffic to Vigoron.in." },
+      { step: "Results", title: "310% Growth in Direct Sales", description: "Expanded brand presence nationwide with 500k+ organic reach and seamless online order processing." }
+    ],
+    clientInfo: {
+      clientName: "Anytime Sports Nutrition (Vigoron)",
+      duration: "4 Weeks",
+      teamSize: "4 Experts",
+      problem: "Fitness enthusiasts and athletes needed a trusted, fast online platform to order authentic whey protein, creatine, and wellness supplements without worrying about counterfeit products or slow checkout processes.",
+      solution: "We built an end-to-end Next.js e-commerce platform integrated with Razorpay payments, paired with a dynamic Instagram growth strategy featuring athlete reviews, ingredient transparency reels, and automated order notifications."
+    },
+    imagePreview: "/projects/vigoron.png",
+    imageDesktop: "/projects/vigoron.png",
+    imageMobile: "/projects/vigoron.png",
+    liveUrl: "https://vigoron.in/",
+    instagramUrl: "https://www.instagram.com/anytime_sports_nutrition"
+  },
+  {
+    id: "proj-10",
+    slug: "wadhwa-diamonds",
+    title: "Wadhwa Diamonds Official",
+    industry: "Fine Diamond Jewellery",
+    shortDescription: "Instagram content curation, viral reel strategy, and high-ticket customer acquisition for a premier diamond house.",
+    services: ["Instagram Growth", "Reel Production", "Social Media Marketing", "Lead Funnels"],
+    metrics: [
+      { label: "Reel Views", value: "1.2M+" },
+      { label: "Profile Visits", value: "+340%" },
+      { label: "Qualified Leads", value: "50+/mo" },
+      { label: "Engagement", value: "High" }
+    ],
+    technologies: ["Instagram Business", "Meta Ads Manager", "Canva Pro", "CapCut"],
+    caseStudy: [
+      { step: "Challenge", title: "High-Ticket Client Acquisition", description: "Reaching discerning buyers interested in certified diamond jewelry and customized diamond bridal sets." },
+      { step: "Strategy", title: "Macro Diamond Video Showcases", description: "Produced high-resolution macro videos highlighting diamond clarity, cut brilliance, and solitaire craftsmanship." },
+      { step: "Growth", title: "Precision Audience Targeting", description: "Ran hyper-targeted Instagram campaigns aimed at luxury shoppers and wedding planners." },
+      { step: "Results", title: "1.2M+ Views & High-Ticket Sales", description: "Drove over 1.2M organic & paid video impressions and delivered 50+ high-intent buyer inquiries monthly." }
+    ],
+    clientInfo: {
+      clientName: "Wadhwa Diamonds Official",
+      duration: "Ongoing Partnership",
+      teamSize: "2 Experts",
+      problem: "Establishing a high-trust digital identity for luxury solitaire and diamond jewelry on social media to attract affluent buyers seeking authentic certifications.",
+      solution: "We crafted an aesthetic Instagram growth strategy centered around macro video showcases, diamond education reels, and streamlined DM-to-appointment booking funnels."
+    },
+    imagePreview: "/projects/wadhwa-diamonds.png",
+    imageDesktop: "/projects/wadhwa-diamonds.png",
+    imageMobile: "/projects/wadhwa-diamonds.png",
+    instagramUrl: "https://www.instagram.com/wadhwadiamonds.official"
+  },
+  {
+    id: "proj-11",
+    slug: "marilyn-lucknow",
+    title: "Marilyn Lucknow",
+    industry: "Fashion Couture & Apparel",
+    shortDescription: "Visual branding, viral Instagram Reels campaigns, and boutique foot-traffic growth for an exclusive fashion studio in Lucknow.",
+    services: ["Instagram Growth", "Reel Production", "Local Brand Awareness", "Content Strategy"],
+    metrics: [
+      { label: "Boutique Traffic", value: "+220%" },
+      { label: "Reel Impressions", value: "850k+" },
+      { label: "DM Inquiries", value: "+180%" },
+      { label: "Location", value: "Lucknow" }
+    ],
+    technologies: ["Instagram Business", "Meta Ads Suite", "Creative Studio", "CapCut"],
+    caseStudy: [
+      { step: "Challenge", title: "Boutique Visibility in Competitive Market", description: "Standing out among local fashion boutiques and driving in-store visits for handcrafted designer couture." },
+      { step: "Strategy", title: "Trending Outfit Lookbooks", description: "Created trendy, fast-paced reel lookbooks showcasing seasonal festive & partywear collections." },
+      { step: "Growth", title: "Geo-Targeted Outreach", description: "Focused Instagram content and targeted promotions within Lucknow and surrounding metro regions." },
+      { step: "Results", title: "220% Growth in Store Foot Traffic", description: "Generated 850k+ reel impressions and significantly expanded in-person store visits and sales." }
+    ],
+    clientInfo: {
+      clientName: "Marilyn Lucknow",
+      duration: "Ongoing Partnership",
+      teamSize: "2 Experts",
+      problem: "An exclusive fashion boutique wanted to translate its physical collection into viral social content to attract fashion-conscious shoppers across the city.",
+      solution: "We produced trendy video lookbooks, behind-the-scenes fitting reels, and geo-targeted Instagram ad campaigns that boosted foot traffic by 220%."
+    },
+    imagePreview: "/projects/marilyn-lucknow.png",
+    imageDesktop: "/projects/marilyn-lucknow.png",
+    imageMobile: "/projects/marilyn-lucknow.png",
+    instagramUrl: "https://www.instagram.com/marilynlucknow"
+  },
+  {
+    id: "proj-12",
+    slug: "kruthika-jewellery",
+    title: "Kruthika Jewellery",
+    industry: "Heritage & Designer Jewellery",
+    shortDescription: "Aesthetic Instagram grid curation, reel marketing, and high-conversion client outreach for handcrafted heritage jewellery collections.",
+    services: ["Instagram Growth", "Social Media Marketing", "Brand Styling", "Targeted Campaigns"],
+    metrics: [
+      { label: "Audience Growth", value: "+260%" },
+      { label: "Engagement Rate", value: "5.4%" },
+      { label: "Direct Inquiries", value: "+145%" },
+      { label: "Delivery", value: "Ongoing" }
+    ],
+    technologies: ["Instagram Reels", "Content Strategy", "Meta Ads Suite"],
+    caseStudy: [
+      { step: "Challenge", title: "Highlighting Intricate Artistry", description: "Communicating the unique value and traditional craftsmanship of temple and heritage jewellery pieces." },
+      { step: "Strategy", title: "Curated Grid & Detail Shorts", description: "Designed an elegant grid aesthetic paired with close-up craftsmanship shorts and customer unboxings." },
+      { step: "Growth", title: "Active DM Lead Engine", description: "Implemented automated keyword responses for price and order inquiries directly on Instagram." },
+      { step: "Results", title: "145% Surge in Direct Orders", description: "Built a loyal community of jewellery enthusiasts with an exceptional 5.4% engagement rate." }
+    ],
+    clientInfo: {
+      clientName: "Kruthika Jewellery",
+      duration: "Ongoing Partnership",
+      teamSize: "2 Experts",
+      problem: "Crafting a premium Instagram grid that reflects traditional heritage while driving active daily purchase inquiries via DMs.",
+      solution: "We designed a cohesive Instagram aesthetic, optimized reel content, and implemented instant DM inquiry workflows that expanded direct client sales by 145%."
+    },
+    imagePreview: "/projects/kruthika-jewellery.png",
+    imageDesktop: "/projects/kruthika-jewellery.png",
+    imageMobile: "/projects/kruthika-jewellery.png",
+    instagramUrl: "https://www.instagram.com/kruthika_jewellery"
+  },
+  {
+    id: "proj-13",
+    slug: "tmu-hospital",
+    title: "TMU Hospital & Super Speciality",
+    industry: "Healthcare Institution",
+    shortDescription: "Digital brand awareness, medical care educational campaigns, and patient trust building for a premier super-specialty hospital.",
+    services: ["Social Media Management", "Healthcare Marketing", "Content Strategy", "Patient Awareness"],
+    metrics: [
+      { label: "Monthly Reach", value: "1.5M+" },
+      { label: "Patient Trust", value: "High" },
+      { label: "OPD Enquiries", value: "+195%" },
+      { label: "Location", value: "Moradabad" }
+    ],
+    technologies: ["Instagram Business", "Meta Ads Suite", "Healthcare Content Suite"],
+    caseStudy: [
+      { step: "Challenge", title: "Public Healthcare Awareness & Trust", description: "Educating regional patients on advanced surgical capabilities, emergency care, and specialist doctors." },
+      { step: "Strategy", title: "Doctor Q&A & Patient Stories", description: "Produced informative health tips, doctor video interviews, and inspiring patient recovery stories." },
+      { step: "Growth", title: "Community Health Campaigns", description: "Ran awareness drives for specialty departments (cardiology, neurology, oncology, emergency)." },
+      { step: "Results", title: "1.5M+ Monthly Regional Reach", description: "Established TMU Hospital as the most trusted healthcare brand in the region with a 195% increase in OPD inquiries." }
+    ],
+    clientInfo: {
+      clientName: "TMU Hospital & Research Centre",
+      duration: "Ongoing Partnership",
+      teamSize: "3 Experts",
+      problem: "A major super-specialty hospital needed to communicate its medical infrastructure, expert doctors, and emergency facilities effectively to millions of regional residents.",
+      solution: "We architected a comprehensive social media growth and healthcare awareness campaign featuring doctor interviews, health tips, and emergency helpline routing—reaching 1.5M+ users monthly."
+    },
+    imagePreview: "/projects/tmu-hospital.png",
+    imageDesktop: "/projects/tmu-hospital.png",
+    imageMobile: "/projects/tmu-hospital.png",
+    instagramUrl: "https://www.instagram.com/tmuhospital"
   }
 ];
+

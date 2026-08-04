@@ -9,25 +9,30 @@ import { Filter, Grid, Sparkles } from "lucide-react";
 export default function ProjectGrid() {
   const [activeFilter, setActiveFilter] = useState("All");
 
-  // Dynamically calculate services & counts from all projects
+  // Filter out Instagram growth projects and their websites for the Work section
+  const workProjects = useMemo(() => {
+    return projects.filter((p) => !p.instagramUrl);
+  }, []);
+
+  // Dynamically calculate services & counts from workProjects
   const filterCategories = useMemo(() => {
     const serviceSet = new Set<string>();
-    projects.forEach(p => p.services.forEach(s => serviceSet.add(s)));
+    workProjects.forEach(p => p.services.forEach(s => serviceSet.add(s)));
     
     const categories = ["All", ...Array.from(serviceSet)];
     
     return categories.map(category => {
       const count = category === "All" 
-        ? projects.length 
-        : projects.filter(p => p.services.includes(category)).length;
+        ? workProjects.length 
+        : workProjects.filter(p => p.services.includes(category)).length;
       return { name: category, count };
     });
-  }, []);
+  }, [workProjects]);
 
   const filteredProjects = useMemo(() => {
-    if (activeFilter === "All") return projects;
-    return projects.filter(p => p.services.includes(activeFilter));
-  }, [activeFilter]);
+    if (activeFilter === "All") return workProjects;
+    return workProjects.filter(p => p.services.includes(activeFilter));
+  }, [activeFilter, workProjects]);
 
   return (
     <section className="relative py-20 md:py-28 bg-transparent overflow-hidden">

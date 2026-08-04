@@ -26,37 +26,37 @@ export default function CTOBanner() {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6">
                 <Cpu className="w-4 h-4 text-purple-300" />
                 <span className="text-xs font-inter uppercase tracking-[0.2em] text-white font-bold">
-                  Executive Technical Leadership & Advisory
+                  Fractional CTO & Tech Advisory
                 </span>
               </div>
 
               {/* Title */}
               <h3 className="text-3xl sm:text-4xl md:text-5xl font-playfair font-medium text-white mb-4 leading-tight">
-                Architecting Complex Tech? <br className="hidden sm:block" />
-                <span className="italic text-purple-200 font-light">Inquire Technical Architecture Guidance.</span>
+                Building Complex Software? <br className="hidden sm:block" />
+                <span className="italic text-purple-200 font-light">Get Senior Tech Leadership.</span>
               </h3>
 
               <p className="font-inter text-sm md:text-base text-purple-100/80 font-light leading-relaxed max-w-2xl mb-8">
-                Get senior technical leadership without full-time overhead. We advise on system architecture, database scaling (PostgreSQL/Supabase), offline-first sync engines, and security compliance.
+                Get expert CTO guidance without hiring full-time. We help you design scalable apps, optimize databases, secure your systems, and resolve technical bottlenecks.
               </p>
 
               {/* Core Offerings List */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 w-full pt-4 border-t border-white/10">
                 <div className="flex items-center gap-2 text-xs font-inter text-purple-200">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>System Architecture</span>
+                  <span>App Architecture</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-inter text-purple-200">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Local-Cloud Sync</span>
+                  <span>Cloud & Databases</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-inter text-purple-200">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Security & RLS</span>
+                  <span>Security & Audits</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs font-inter text-purple-200">
                   <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>Full-Stack Scaling</span>
+                  <span>Fast Performance</span>
                 </div>
               </div>
 
@@ -70,13 +70,13 @@ export default function CTOBanner() {
                   className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-white text-[var(--color-amethyst)] font-inter uppercase tracking-widest text-xs font-extrabold hover:bg-purple-50 transition-all duration-300 shadow-xl hover:scale-105"
                 >
                   <Terminal className="w-4 h-4 text-[var(--color-amethyst)]" />
-                  <span>Inquire Technical Advisory</span>
+                  <span>Get Tech Advisory</span>
                   <ArrowUpRight className="w-4 h-4 text-[var(--color-amethyst)]" />
                 </Link>
               </MagneticButton>
 
               <span className="text-[11px] font-inter text-purple-300/60 uppercase tracking-wider mt-3 font-medium">
-                • 30-Min Tech Audit Available
+                • Free 30-Min Tech Audit Available
               </span>
             </div>
 
