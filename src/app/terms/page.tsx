@@ -2,9 +2,14 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Spotlight } from "@/components/core/spotlight";
 
-export const metadata = {
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Terms of Service | Chaos Digital",
   description: "Terms and conditions for using Chaos Digital services.",
+  alternates: {
+    canonical: "https://chaosdigital.in/terms",
+  },
 };
 
 export default function TermsPage() {

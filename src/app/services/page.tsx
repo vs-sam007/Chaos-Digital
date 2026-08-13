@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { servicesData } from "@/data/services";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
@@ -6,9 +7,12 @@ import ServiceGrid from "@/components/services/ServiceGrid";
 import ServicesProcess from "@/components/services/ServicesProcess";
 import ServicesCTA from "@/components/services/ServicesCTA";
 
-export const metadata = {
-  title: "Complete Digital Arsenal | Services | Chaos Digital",
+export const metadata: Metadata = {
+  title: "Digital Marketing Services in Lucknow | Chaos Digital",
   description: "End-to-End Digital Engineering, Software Development, E-Commerce, Paid Marketing, and AI Automations for MSMEs, Startups & Global Enterprises.",
+  alternates: {
+    canonical: "https://chaosdigital.in/services",
+  },
 };
 
 export default function ServicesIndexPage() {

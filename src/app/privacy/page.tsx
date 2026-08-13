@@ -2,9 +2,14 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import { Spotlight } from "@/components/core/spotlight";
 
-export const metadata = {
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Privacy Policy | Chaos Digital",
   description: "Privacy Policy and Data Protection guidelines for Chaos Digital.",
+  alternates: {
+    canonical: "https://chaosdigital.in/privacy",
+  },
 };
 
 export default function PrivacyPage() {

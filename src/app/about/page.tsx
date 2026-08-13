@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import AboutPageHero from "@/components/about/AboutPageHero";
 import AboutWhatWeDo from "@/components/about/AboutWhatWeDo";
@@ -6,9 +7,12 @@ import AboutWhyUs from "@/components/about/AboutWhyUs";
 import AboutPromiseCTA from "@/components/about/AboutPromiseCTA";
 import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: "About Us | Chaos Digital Solutions",
+export const metadata: Metadata = {
+  title: "About Us | Digital Marketing Company in Lucknow",
   description: "Learn about Chaos Digital Solutions — Full-service digital marketing agency based in Lucknow, Uttar Pradesh, serving clients across India.",
+  alternates: {
+    canonical: "https://chaosdigital.in/about",
+  },
 };
 
 export default function AboutPage() {

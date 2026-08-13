@@ -12,9 +12,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const service = servicesData.find((s) => s.slug === resolvedParams.slug);
   if (!service) return { title: "Service Not Found" };
   
+  const url = `https://chaosdigital.in/services/${service.slug}`;
+
   return {
-    title: `${service.title} | Chaos Digital`,
-    description: service.description,
+    title: `${service.title} Agency in Lucknow | Chaos Digital`,
+    description: `${service.description} Discover our premium ${service.title.toLowerCase()} services in Lucknow.`,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title: `${service.title} | Chaos Digital`,
+      description: service.description,
+      url,
+      type: "article",
+    },
   };
 }
 
@@ -35,8 +46,31 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   // Dynamic icon mapping
   const IconComponent = (Icons as any)[service.iconName] || Icons.Code;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": service.title,
+    "description": service.description,
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Chaos Digital",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lucknow",
+        "addressRegion": "Uttar Pradesh",
+        "addressCountry": "IN"
+      }
+    },
+    "areaServed": "Lucknow",
+    "url": `https://chaosdigital.in/services/${service.slug}`
+  };
+
   return (
     <main className="bg-[var(--color-ivory)] min-h-screen text-void font-inter selection:bg-[var(--color-amethyst)] selection:text-[var(--color-ivory)] relative overflow-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Navigation />
       
       {/* Ambient Background Mesh */}

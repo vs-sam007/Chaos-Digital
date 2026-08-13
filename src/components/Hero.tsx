@@ -181,6 +181,7 @@ export default function Hero() {
           </div>
           
           <h1 className="text-5xl sm:text-6xl lg:text-[5.5rem] leading-[1.1] font-inter font-bold tracking-tight mb-6">
+            <span className="block text-xl lg:text-2xl text-[var(--color-hero-text-secondary)] font-normal mb-2 uppercase tracking-wider">Lucknow's Premier Digital Marketing Agency</span>
             We Build <br />
             <span className="inline-block relative min-h-[1.15em] overflow-hidden align-bottom py-1">
               <AnimatePresence mode="wait">

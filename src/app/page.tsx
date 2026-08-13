@@ -10,6 +10,16 @@ import TextMarquee from "@/components/TextMarquee";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Digital Marketing Agency in Lucknow | Chaos Digital",
+  description: "Chaos Digital is a premium digital marketing agency in Lucknow offering SEO, custom website development, and AI automation to build revenue-driven growth systems.",
+  alternates: {
+    canonical: "https://chaosdigital.in",
+  },
+};
+
 
 export default function Home() {
   return (

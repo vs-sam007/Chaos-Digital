@@ -5,9 +5,14 @@ import DeliveredProjectsGrid from "@/components/projects/DeliveredProjectsGrid";
 import ClientSuccessHighlights from "@/components/projects/ClientSuccessHighlights";
 import ProjectsCTA from "@/components/projects/ProjectsCTA";
 
-export const metadata = {
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
   title: "Delivered Client Projects | Chaos Digital",
   description: "Explore our archive of delivered client projects, custom mobile applications, web platforms, and enterprise software built for real-world growth.",
+  alternates: {
+    canonical: "https://chaosdigital.in/projects",
+  },
 };
 
 export default function DeliveredProjectsPage() {

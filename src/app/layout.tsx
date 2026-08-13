@@ -16,8 +16,25 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Chaos Digital",
-  description: "Websites that defy gravity. Premium digital marketing agency.",
+  metadataBase: new URL('https://chaosdigital.in'),
+  title: {
+    default: "Chaos Digital | Premium Digital Marketing Agency in Lucknow",
+    template: "%s | Chaos Digital",
+  },
+  description: "Chaos Digital is a premium digital marketing, SEO, and web development agency based in Lucknow. We build revenue-driven growth systems and AI automations for ambitious brands.",
+  openGraph: {
+    title: "Chaos Digital | Premium Digital Marketing Agency",
+    description: "Chaos Digital is a premium digital marketing, SEO, and web development agency based in Lucknow. We build revenue-driven growth systems.",
+    url: "https://chaosdigital.in",
+    siteName: "Chaos Digital",
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Chaos Digital | Premium Digital Marketing Agency",
+    description: "Premium digital marketing, SEO, and web development agency based in Lucknow.",
+  },
   icons: {
     icon: [
       { url: "/icon.png", type: "image/png" },
@@ -33,12 +50,38 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": ["Organization", "LocalBusiness"],
+    "name": "Chaos Digital",
+    "url": "https://chaosdigital.in",
+    "logo": "https://chaosdigital.in/icon.png",
+    "description": "Chaos Digital is a premium digital marketing, SEO, and web development agency based in Lucknow.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Lucknow",
+      "addressRegion": "Uttar Pradesh",
+      "addressCountry": "IN"
+    },
+    "areaServed": "Lucknow",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "customer service"
+    }
+  };
+
   return (
     <html
       lang="en"
       className={`${inter.variable} ${playfair.variable} h-full antialiased`}
       suppressHydrationWarning
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-full flex flex-col font-inter relative bg-[var(--color-ivory)] text-[var(--color-amethyst)]">
         <Preloader />
         <SmoothScroll>

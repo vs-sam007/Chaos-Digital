@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import WorkHero from "@/components/work/WorkHero";
@@ -6,9 +7,12 @@ import CTOBanner from "@/components/work/CTOBanner";
 import ProjectGrid from "@/components/work/ProjectGrid";
 import BottomCTA from "@/components/work/BottomCTA";
 
-export const metadata = {
-  title: "Our Work | Chaos Digital",
-  description: "Explore how we've helped ambitious businesses build premium digital experiences, improve performance and accelerate growth.",
+export const metadata: Metadata = {
+  title: "Our Work | Digital Marketing Portfolio | Chaos Digital",
+  description: "Explore how Chaos Digital has helped ambitious businesses in Lucknow and beyond build premium digital experiences and accelerate growth.",
+  alternates: {
+    canonical: "https://chaosdigital.in/work",
+  },
 };
 
 export default function WorkPage() {

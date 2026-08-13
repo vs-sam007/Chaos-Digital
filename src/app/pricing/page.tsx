@@ -41,10 +41,16 @@ const onboardingSteps = [
   { step: 6, title: "Execution & Reporting", desc: "We execute. You grow. Weekly/monthly reports keep you always in the loop." },
 ];
 
-export const metadata = {
-  title: "Packages & Capabilities | Chaos Digital",
-  description: "Transparent, retainer-based growth systems. Compare our plans and capability matrix.",
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Pricing Packages | Digital Marketing Agency in Lucknow",
+  description: "Transparent, retainer-based growth systems and pricing from Chaos Digital. Compare our digital marketing packages and capability matrix.",
+  alternates: {
+    canonical: "https://chaosdigital.in/pricing",
+  },
 };
+
 
 export default function PricingPage() {
   return (
