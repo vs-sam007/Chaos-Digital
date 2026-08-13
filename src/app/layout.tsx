@@ -4,6 +4,7 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
 import Preloader from "@/components/Preloader";
+import Script from "next/script";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -83,6 +84,22 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col font-inter relative bg-[var(--color-ivory)] text-[var(--color-amethyst)]">
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=G-NP4HNPRTWP"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-NP4HNPRTWP');
+            `,
+          }}
+        />
         <Preloader />
         <SmoothScroll>
           <CustomCursor />
