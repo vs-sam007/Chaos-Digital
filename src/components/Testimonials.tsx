@@ -8,7 +8,7 @@ const testimonials = [
   {
     quote: "Bhai, inka design ek number hai! Chaos Digital ne humara website pura transform kar diya. Leads toh literally double ho gaye just within a month.",
     name: "Aarav Sharma",
-    role: "CMO, RelianceTech",
+    role: "CMO, Apex Solutions",
     image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=150&h=150&fit=crop",
   },
   {
@@ -20,7 +20,7 @@ const testimonials = [
   {
     quote: "Website nahi, inlogo ne toh pura ecosystem build kiya hai. The smooth UI/UX is mind-blowing. Desi swag combined with international premium quality.",
     name: "Rohan Kapoor",
-    role: "VP Marketing, Tata Orbit",
+    role: "VP Marketing, Orbit Digital",
     image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop",
   },
   {
@@ -32,31 +32,31 @@ const testimonials = [
   {
     quote: "Unbelievable aesthetics! Our brand value literally skyrocketed after the rebrand. Customer retention bhi pehle se significantly badh gaya hai.",
     name: "Vikram Singh",
-    role: "CEO, GrowthHackers",
+    role: "CEO, NexaGrowth",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop",
   },
   {
     quote: "Bohot agencies ke saath kaam kiya hai pehle, but Chaos Digital is entirely different. Inka creative approach ekdum out of the box hai.",
     name: "Ananya Patel",
-    role: "Brand Lead, Zomato",
+    role: "Brand Lead, CraveBites",
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop",
   },
   {
     quote: "Traffic laana sabko aata hai, but actual conversion inke jaisa koi nahi karta. Ekdum paisa vasool service hai, I highly recommend them to everyone.",
-    name: "Karan Johar",
-    role: "Founder, Dharma Drops",
+    name: "Karan Mehta",
+    role: "Founder, Elevate E-commerce",
     image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop",
   },
   {
     quote: "Next level animations aur micro-interactions! Clients roz puchte hain ki website kisne design ki. It's just amazing work by the whole team.",
     name: "Meera Menon",
-    role: "Creative Head, Vogue IN",
+    role: "Creative Head, Studio Aura",
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=150&h=150&fit=crop",
   },
   {
     quote: "Support and communication ekdum top class. Har choti detail par dhyan diya. The final product was way better than what we actually imagined.",
-    name: "Kabir Khan",
-    role: "CTO, TechFin",
+    name: "Kabir Verma",
+    role: "CTO, FinEdge",
     image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
   },
 ];
