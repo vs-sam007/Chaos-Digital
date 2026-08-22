@@ -30,11 +30,20 @@ export const metadata: Metadata = {
     siteName: "Chaos Digital",
     locale: "en_IN",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Chaos Digital Open Graph Image",
+      }
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Chaos Digital | Premium Digital Marketing Agency",
     description: "Premium digital marketing, SEO, and web development agency based in Lucknow.",
+    images: ["/og-image.png"],
   },
   icons: {
     icon: [
