@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Globe, MessageSquare, Share2, Camera } from "lucide-react";
+import { Instagram } from "lucide-react";
 import Link from "next/link";
 import { Logo } from "./Logo";
 
@@ -21,11 +21,9 @@ export default function Footer() {
               Websites that defy gravity. We engineer weightless, high-converting digital experiences.
             </p>
             <div className="flex gap-4 mt-8">
-              {[Globe, MessageSquare, Share2, Camera].map((Icon, i) => (
-                <a key={i} href="#" className="text-[var(--color-ivory)]/40 hover:text-[var(--color-ivory)] transition-colors">
-                  <Icon className="w-5 h-5" />
-                </a>
-              ))}
+              <a href="https://www.instagram.com/chaos.digital.solution?igsi=MWhxbjFsd2NyOTF0eQ==" target="_blank" rel="noopener noreferrer" className="text-[var(--color-ivory)]/40 hover:text-[var(--color-ivory)] transition-colors">
+                <Instagram className="w-6 h-6" />
+              </a>
             </div>
           </div>
 
