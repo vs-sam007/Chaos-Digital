@@ -127,8 +127,8 @@ export default function BlogIndexPage() {
 
                     <div className="flex items-center justify-between pt-6 border-t border-[var(--color-amethyst)]/10">
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-[var(--color-amethyst)] text-white font-bold flex items-center justify-center text-sm">
-                          CD
+                        <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-amethyst)] to-purple-800 text-white font-bold flex items-center justify-center text-xs tracking-wider border border-[var(--color-amethyst)]/20 shadow-sm shrink-0">
+                          SVS
                         </div>
                         <div>
                           <div className="text-sm font-semibold text-[var(--color-amethyst)]">{featuredBlog.author.name}</div>
@@ -143,11 +143,13 @@ export default function BlogIndexPage() {
                   </div>
 
                   {/* Right Image */}
-                  <div className="lg:col-span-5 relative h-64 sm:h-80 lg:h-[380px] rounded-2xl overflow-hidden bg-[var(--color-amethyst)]/5">
+                  <div className="lg:col-span-5 relative h-64 sm:h-80 lg:h-[380px] rounded-2xl overflow-hidden bg-[var(--color-amethyst)]/5 shadow-inner">
                     <Image
                       src={featuredBlog.coverImage}
                       alt={featuredBlog.title}
                       fill
+                      priority
+                      sizes="(max-width: 1024px) 100vw, 40vw"
                       className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
@@ -178,6 +180,7 @@ export default function BlogIndexPage() {
                         src={blog.coverImage}
                         alt={blog.title}
                         fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                       />
                     </div>
@@ -201,9 +204,14 @@ export default function BlogIndexPage() {
                   </div>
 
                   <div className="pt-6 border-t border-[var(--color-amethyst)]/10 flex items-center justify-between">
-                    <span className="text-xs text-[var(--color-amethyst)]/50 font-medium">
-                      {blog.date}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-full bg-gradient-to-br from-[var(--color-amethyst)] to-purple-800 text-white font-bold flex items-center justify-center text-[10px] shrink-0">
+                        SVS
+                      </div>
+                      <span className="text-xs text-[var(--color-amethyst)]/70 font-medium">
+                        {blog.author.name}
+                      </span>
+                    </div>
                     <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-[var(--color-amethyst)] group-hover:translate-x-1 transition-transform">
                       Read Article <ChevronRight className="w-4 h-4" />
                     </span>
@@ -221,7 +229,7 @@ export default function BlogIndexPage() {
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 text-white text-xs font-semibold uppercase tracking-widest mb-6">
                 Direct Growth Consultation
               </div>
-              <h2 className="text-3xl sm:text-5xl font-playfair font-medium uppercase tracking-tight mb-6 leading-tight">
+              <h2 className="text-3xl sm:text-5xl font-playfair font-medium uppercase tracking-tight mb-6 leading-tight !text-white text-white">
                 Want to dominate <span className="text-[#E0FF5F]">Google & AI Search</span> in Lucknow?
               </h2>
               <p className="text-white/80 text-lg font-light leading-relaxed mb-8 max-w-2xl">

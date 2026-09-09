@@ -214,8 +214,8 @@ export default async function BlogPostPage({ params }: PageProps) {
             {/* Author Profile Card */}
             <div className="flex items-center justify-between p-4 sm:p-6 rounded-2xl bg-white/70 border border-[var(--color-amethyst)]/15 backdrop-blur-md">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-[var(--color-amethyst)] text-white font-bold flex items-center justify-center text-sm shadow-md">
-                  CD
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[var(--color-amethyst)] to-purple-800 text-white font-bold flex items-center justify-center text-sm tracking-wider shadow-md border border-[var(--color-amethyst)]/20 shrink-0">
+                  SVS
                 </div>
                 <div>
                   <div className="font-semibold text-[var(--color-amethyst)] text-base">{blog.author.name}</div>
@@ -236,6 +236,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               alt={blog.title}
               fill
               priority
+              sizes="(max-width: 1024px) 100vw, 896px"
               className="object-cover"
             />
           </div>
@@ -247,7 +248,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 text-xs font-bold uppercase tracking-widest text-[#E0FF5F] mb-4">
                 <Sparkles className="w-3.5 h-3.5" /> Direct Answer for Search & AI Assistants
               </div>
-              <h2 className="text-lg sm:text-xl font-playfair font-semibold mb-3 text-white">
+              <h2 className="text-lg sm:text-2xl font-playfair font-semibold mb-3 !text-white text-white">
                 Key Strategic Summary
               </h2>
               <p className="text-sm sm:text-base text-white/90 font-light leading-relaxed">
@@ -321,7 +322,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                       <thead>
                         <tr className="bg-[var(--color-amethyst)] text-white">
                           {section.tableData.headers.map((h, i) => (
-                            <th key={i} className="p-4 font-playfair font-semibold tracking-wide">
+                            <th key={i} className="p-4 font-playfair font-semibold tracking-wide !text-white">
                               {h}
                             </th>
                           ))}
@@ -387,7 +388,7 @@ export default async function BlogPostPage({ params }: PageProps) {
               <span className="text-xs font-bold uppercase tracking-widest text-[#E0FF5F] mb-3 block">
                 Take Action Today
               </span>
-              <h3 className="text-2xl sm:text-4xl font-playfair font-medium uppercase tracking-tight mb-4 leading-snug text-white">
+              <h3 className="text-2xl sm:text-4xl font-playfair font-medium uppercase tracking-tight mb-4 leading-snug !text-white text-white">
                 Ready to dominate your market in Lucknow?
               </h3>
               <p className="text-white/80 font-light text-base sm:text-lg mb-8">

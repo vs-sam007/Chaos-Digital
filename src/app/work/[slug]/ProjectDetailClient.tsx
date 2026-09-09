@@ -46,6 +46,7 @@ export default function ProjectDetailClient({ project }: ProjectDetailClientProp
                   src={images[activeIdx]}
                   alt={`${project.title} Preview ${activeIdx + 1}`}
                   fill
+                  sizes="(max-width: 1200px) 100vw, 1152px"
                   className="object-cover"
                   priority
                 />

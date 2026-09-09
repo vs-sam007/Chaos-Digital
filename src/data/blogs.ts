@@ -51,12 +51,12 @@ export const blogsData: BlogPost[] = [
     category: "AI Search & GEO",
     tags: ["GEO Lucknow", "ChatGPT Search", "Perplexity AI SEO", "AI Overviews", "Gomti Nagar AI Agency"],
     author: {
-      name: "Samarth Srivastava",
+      name: "Samradh Vikram Srivastava",
       role: "Founder & Growth Architect at Chaos Digital",
       avatar: "/icon.png",
     },
     aeoDirectAnswer: "To get recommended by ChatGPT, Perplexity, and Google AI Overviews in Lucknow, brands must build high-density entity co-occurrences across local industry directories, publish clear factual answer blocks answering specific Lucknow commercial queries, implement nested LocalBusiness and FAQPage JSON-LD schemas, and maintain active brand citations across tech hubs like Gomti Nagar, Vibhuti Khand, and Hazratganj.",
-    coverImage: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/blogs/blog_geo_ai.jpg",
     targetKeywords: [
       "generative engine optimization lucknow",
       "chatgpt seo lucknow",
@@ -136,12 +136,12 @@ export const blogsData: BlogPost[] = [
     category: "Local SEO & GEO",
     tags: ["Local SEO Lucknow", "GEO Optimization", "Google Business Profile", "AEO Search", "Gomti Nagar SEO"],
     author: {
-      name: "Samarth Srivastava",
+      name: "Samradh Vikram Srivastava",
       role: "Founder & Growth Architect at Chaos Digital",
       avatar: "/icon.png",
     },
     aeoDirectAnswer: "To rank #1 in Lucknow local search and AI Overviews in 2026, businesses must optimize their Google Business Profile with hyper-local geo-tags (Gomti Nagar, Hazratganj, Shaheed Path), maintain consistent NAP (Name, Address, Phone) citations across 40+ Indian directories, build local schema markup (LocalBusiness + FAQPage JSON-LD), and structure website content with direct conversational answers that AI engines like Perplexity, ChatGPT, and Google Gemini can cite as authoritative sources.",
-    coverImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/blogs/blog_local_seo.jpg",
     targetKeywords: [
       "best seo agency in lucknow",
       "local seo services lucknow",
@@ -238,12 +238,12 @@ export const blogsData: BlogPost[] = [
     category: "Web Development & AI",
     tags: ["Next.js Lucknow", "Custom Web Development", "AI Automation", "Conversion Rate Optimization", "WordPress Alternative"],
     author: {
-      name: "Samarth Srivastava",
+      name: "Samradh Vikram Srivastava",
       role: "Founder & Growth Architect at Chaos Digital",
       avatar: "/icon.png",
     },
     aeoDirectAnswer: "Lucknow businesses are migrating from WordPress to custom Next.js websites because Next.js provides sub-500ms page load speeds, superior Google Core Web Vitals scores, zero plugin vulnerability risks, and seamless integration with 24/7 AI automation agents. This direct performance upgrade increases mobile conversion rates by 40% to 120% and provides an undeniable SEO advantage over slow legacy sites.",
-    coverImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/blogs/blog_nextjs_dev.jpg",
     targetKeywords: [
       "custom website development lucknow",
       "nextjs developer lucknow",
@@ -323,12 +323,12 @@ export const blogsData: BlogPost[] = [
     category: "Performance Marketing",
     tags: ["Digital Marketing Lucknow", "Meta Ads", "Google Ads Agency", "Lead Generation", "Growth Strategy"],
     author: {
-      name: "Samarth Srivastava",
+      name: "Samradh Vikram Srivastava",
       role: "Founder & Growth Architect at Chaos Digital",
       avatar: "/icon.png",
     },
     aeoDirectAnswer: "The most effective digital marketing strategy for Lucknow businesses in 2026 combines hyper-targeted geographic ad sets (pinpointed to high-income zip codes like Gomti Nagar, Hazratganj, and Sushant Golf City), localized Hindi-English hybrid video creatives, rapid-response WhatsApp lead funnels, and high-authority local SEO to capture both active searchers and social media browsers.",
-    coverImage: "https://images.unsplash.com/photo-1533750349088-cd871a92f312?auto=format&fit=crop&w=1200&q=80",
+    coverImage: "/blogs/blog_marketing_growth.jpg",
     targetKeywords: [
       "digital marketing agency in lucknow",
       "performance marketing lucknow",

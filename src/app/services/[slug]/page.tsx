@@ -191,7 +191,7 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
                   
                   <Link 
                     href="/contact" 
-                    className="w-full py-5 bg-accent2 text-[var(--color-amethyst)] font-inter font-bold uppercase tracking-widest text-sm rounded-xl hover:shadow-[0_0_30px_rgba(var(--color-accent2-rgb),0.5)] hover:bg-white hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3"
+                    className="w-full py-5 bg-[#E0FF5F] text-[var(--color-amethyst)] font-inter font-bold uppercase tracking-widest text-sm rounded-xl hover:shadow-[0_0_30px_rgba(224,255,95,0.5)] hover:bg-white hover:scale-[1.02] transition-all duration-300 flex items-center justify-center gap-3"
                   >
                     Book Discovery Call
                     <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />

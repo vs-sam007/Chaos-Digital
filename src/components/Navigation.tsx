@@ -155,9 +155,9 @@ export default function Navigation() {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="absolute bottom-12 left-0 right-0 flex justify-center gap-6"
             >
-              <a href="#" className="text-[var(--color-amethyst)]/50 uppercase tracking-widest text-xs font-semibold hover:text-[var(--color-amethyst)] transition-colors">Instagram</a>
-              <a href="#" className="text-[var(--color-amethyst)]/50 uppercase tracking-widest text-xs font-semibold hover:text-[var(--color-amethyst)] transition-colors">LinkedIn</a>
-              <a href="#" className="text-[var(--color-amethyst)]/50 uppercase tracking-widest text-xs font-semibold hover:text-[var(--color-amethyst)] transition-colors">Twitter</a>
+              <a href="https://www.instagram.com/chaos.digital.solution?igsi=MWhxbjFsd2NyOTF0eQ==" target="_blank" rel="noopener noreferrer" className="text-[var(--color-amethyst)]/70 uppercase tracking-widest text-xs font-semibold hover:text-[var(--color-amethyst)] transition-colors">Instagram</a>
+              <a href="mailto:info.chaosdigital@gmail.com" className="text-[var(--color-amethyst)]/70 uppercase tracking-widest text-xs font-semibold hover:text-[var(--color-amethyst)] transition-colors">Email</a>
+              <a href="tel:+919336252915" className="text-[var(--color-amethyst)]/70 uppercase tracking-widest text-xs font-semibold hover:text-[var(--color-amethyst)] transition-colors">Call</a>
             </motion.div>
           </motion.div>
         )}
