@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next';
 import { servicesData } from '@/data/services';
 import { projects } from '@/data/projects';
+import { blogsData } from '@/data/blogs';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://chaosdigital.in';
@@ -31,12 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: 'yearly',
-      priority: 0.7,
-    },
-    {
       url: `${baseUrl}/pricing`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
@@ -46,6 +41,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/projects`,
       lastModified: new Date(),
       changeFrequency: 'monthly',
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/contact`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
       priority: 0.7,
     },
     {
@@ -76,5 +83,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...dynamicServiceRoutes, ...dynamicProjectRoutes];
+  const dynamicBlogRoutes: MetadataRoute.Sitemap = blogsData.map((blog) => ({
+    url: `${baseUrl}/blog/${blog.slug}`,
+    lastModified: new Date(blog.dateModified),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
+  return [
+    ...staticRoutes, 
+    ...dynamicServiceRoutes, 
+    ...dynamicProjectRoutes, 
+    ...dynamicBlogRoutes
+  ];
 }

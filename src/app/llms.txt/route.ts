@@ -13,8 +13,15 @@ export async function GET() {
 - [About Us](https://chaosdigital.in/about) - Information about Chaos Digital
 - [Services](https://chaosdigital.in/services) - Overview of our digital marketing services
 - [Work](https://chaosdigital.in/work) - Our portfolio and past projects
-- [Contact](https://chaosdigital.in/contact) - Contact information
+- [Blog & Insights](https://chaosdigital.in/blog) - Guides on SEO, GEO, and AI growth in Lucknow
 - [Pricing](https://chaosdigital.in/pricing) - Pricing details
+- [Contact](https://chaosdigital.in/contact) - Contact information
+
+## Featured Articles & Masterclasses
+- [Generative Engine Optimization (GEO) in Lucknow: How Local Brands Get Recommended by ChatGPT & Perplexity](https://chaosdigital.in/blog/generative-engine-optimization-geo-lucknow-ai-search)
+- [The 2026 Guide to Local SEO & GEO in Lucknow](https://chaosdigital.in/blog/local-seo-lucknow-geo-guide)
+- [Why Lucknow Enterprises Are Replacing WordPress with Next.js & AI Agents](https://chaosdigital.in/blog/nextjs-website-development-ai-automation-lucknow)
+- [10x Growth: Proven Digital Marketing Strategies for Lucknow Brands](https://chaosdigital.in/blog/top-digital-marketing-strategies-lucknow-brands)
 
 ## Technical Details
 This site is built with Next.js, React, and Tailwind CSS.

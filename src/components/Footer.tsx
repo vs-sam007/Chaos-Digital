@@ -51,6 +51,7 @@ export default function Footer() {
               <li><Link href="/work" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Work</Link></li>
               <li><Link href="/services" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Services</Link></li>
               <li><Link href="/pricing" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Pricing</Link></li>
+              <li><Link href="/blog" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Blog</Link></li>
               <li><Link href="/about" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">About</Link></li>
               <li><Link href="/contact" className="text-[var(--color-ivory)]/70 hover:text-[var(--color-ivory)] transition-colors">Contact</Link></li>
             </ul>
