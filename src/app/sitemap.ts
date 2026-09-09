@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { servicesData } from '@/data/services';
+import { projects } from '@/data/projects';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://chaosdigital.in';
@@ -68,5 +69,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticRoutes, ...dynamicServiceRoutes];
+  const dynamicProjectRoutes: MetadataRoute.Sitemap = projects.map((project) => ({
+    url: `${baseUrl}/work/${project.slug}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly',
+    priority: 0.8,
+  }));
+
+  return [...staticRoutes, ...dynamicServiceRoutes, ...dynamicProjectRoutes];
 }

@@ -28,6 +28,9 @@ export async function generateMetadata({ params }: PageProps) {
   return {
     title: `${project.title} | Case Study | Chaos Digital`,
     description: project.shortDescription,
+    alternates: {
+      canonical: `https://chaosdigital.in/work/${project.slug}`,
+    },
   };
 }
 
